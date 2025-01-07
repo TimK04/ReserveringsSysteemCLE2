@@ -5,19 +5,20 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Admin page</title>
+    <title>Admin Homepage</title>
+    <link rel="stylesheet" href="adminCSS/admin.css">
 </head>
 <body>
 <nav>
     <p>insert website's nav bar here</p>
 </nav>
 <header>
-    <h1>Adminpage</h1>
+    <h1>Admin Page</h1>
 </header>
 <main>
-    <a href="">Profiel</a>
-    <a href="">Afspraken</a>
-    <a href="">Klanten</a>
+    <a href="adminprofile.php">Profiel</a>
+    <a href="adminappointments.php">Afspraken</a>
+    <a href="adminusers.php">Klanten</a>
 </main>
 <footer>
     <p>insert website's footer here</p>
