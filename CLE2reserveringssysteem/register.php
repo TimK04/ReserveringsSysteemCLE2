@@ -1,3 +1,48 @@
+<?php
+/** @var mysqli $db */
+require_once 'include/database.php';
+session_start();
+$login = false;
+
+
+if (isset($_POST['submit'])) {
+
+
+    $firstName = mysqli_escape_string($db, $_POST['firstName']);
+    $lastName = mysqli_escape_string($db, $_POST['lastName']);
+    $email = mysqli_escape_string($db, $_POST['email']);
+    $password = mysqli_escape_string($db, $_POST['password']);
+
+
+    if ($firstName == '') {
+        $errors['firstName'] = 'uw wachtwoord is verplicht';
+    }
+    if ($lastName == '') {
+        $errors['lastName'] = 'uw wachtwoord is verplicht';
+    }
+    if ($email == '') {
+        $errors['email'] = 'Uw email is verplicht';
+    }
+    if ($password == '') {
+        $errors['password'] = 'uw wachtwoord is verplicht';
+    }
+    if (empty($errors)) {
+        $password = password_hash($password, PASSWORD_DEFAULT);
+
+        $query = "
+    INSERT INTO `users`(`first_name`, `last_name`, `email`, `password`)
+    VALUES ('$firstName','$lastName','$email', '$password')
+    ";
+        $result = mysqli_query($db, $query)
+        or die('Error ' . mysqli_error($db) . 'with query ' . $query);
+        header('location: login.php');
+        exit;
+    };
+}
+
+mysqli_close($db);
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -8,19 +53,31 @@
     <title>Document</title>
 </head>
 <body>
-<label for="firstName">voor naam</label>
-<input id="firstName" type="text" name="firstName">
-
-<label for="lastName">achter naam</label>
-<input id="lastName" type="text" name="lastName">
-
-<label for="email">E-mail</label>
-<input id="email" type="email" name="email">
-
-<label for="password">wachtwoord</label>
-<input id="password" type="password" name="password">
-
-<button type="submit" name="submit">Login</button>
-
+<h1>
+    Register *bedrijf*
+</h1>
+<form action="" method="post">
+    <label for="firstName">voornaam</label>
+    <input id="firstName" type="text" name="firstName">
+    <p>
+        <?= $errors['lastName'] ?? '' ?>
+    </p>
+    <label for="lastName">achternaam</label>
+    <input id="lastName" type="text" name="lastName">
+    <p>
+        <?= $errors['firstName'] ?? '' ?>
+    </p>
+    <label for="email">E-mail</label>
+    <input id="email" type="email" name="email">
+    <p>
+        <?= $errors['email'] ?? '' ?>
+    </p>
+    <label for="password">wachtwoord</label>
+    <input id="password" type="password" name="password">
+    <p>
+        <?= $errors['password'] ?? '' ?>
+    </p>
+    <button type="submit" name="submit">Login</button>
+</form>
 </body>
 </html>
