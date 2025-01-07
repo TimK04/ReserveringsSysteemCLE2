@@ -1,7 +1,7 @@
 <?php
 
 $host = "127.0.0.1";
-$database = "CLE2";
+$database = "cle2";
 $user = "root";
 $password = "";
 
