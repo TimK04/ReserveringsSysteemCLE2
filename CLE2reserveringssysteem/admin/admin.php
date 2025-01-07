@@ -8,9 +8,19 @@
     <title>Admin page</title>
 </head>
 <body>
-<nav></nav>
-<header></header>
-<main></main>
-<footer></footer>
+<nav>
+    <p>insert website's nav bar here</p>
+</nav>
+<header>
+    <h1>Adminpage</h1>
+</header>
+<main>
+    <a href="">Profiel</a>
+    <a href="">Afspraken</a>
+    <a href="">Klanten</a>
+</main>
+<footer>
+    <p>insert website's footer here</p>
+</footer>
 </body>
 </html>
