@@ -1,5 +1,6 @@
 <?php
 /** @var mysqli $db */
+
 /*
 open database
 if submit check if its written!
@@ -27,10 +28,25 @@ if (isset($_POST['submit'])) {
         $errors['password'] = 'uw wachtwoord is verplicht';
     }
     if (empty($errors)) {
-        echo 'geen errors';
+        $query = "
+       SELECT 'email' FROM users WHERE 'email' = '$email'
+       ";
+        $result = mysqli_query($db, $query)
+        or die('Error: ' . mysqli_error($db) . 'with query ' . $query);
 
+        if (mysqli_num_rows($result) == 1) {
+            $query = "
+        SELECT * FROM `users` WHERE 'email' = '$email'
+        ";
+            $result = mysqli_query($db, $query)
+            or die('Error: ' . mysqli_error($db) . 'with query ' . $query);
+            while ($row = mysqli_fetch_assoc($result)) {
+                $hash = $row;
+            }
+
+        }
+      
     }
-
 }
 
 
