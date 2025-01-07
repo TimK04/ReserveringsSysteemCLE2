@@ -8,6 +8,19 @@
     <title>Document</title>
 </head>
 <body>
+<label for="firstName">voor naam</label>
+<input id="firstName" type="text" name="firstName">
+
+<label for="lastName">achter naam</label>
+<input id="lastName" type="text" name="lastName">
+
+<label for="email">E-mail</label>
+<input id="email" type="email" name="email">
+
+<label for="password">wachtwoord</label>
+<input id="password" type="password" name="password">
+
+<button type="submit" name="submit">Login</button>
 
 </body>
 </html>
