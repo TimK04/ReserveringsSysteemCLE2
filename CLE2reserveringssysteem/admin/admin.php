@@ -1,3 +1,5 @@
+<?php
+?>
 <!doctype html>
     <html lang="en">
 <head>
@@ -16,8 +18,11 @@
     <h1>Admin Page</h1>
 </header>
 <main>
+    <p>Profiel</p>
     <a href="adminprofile.php">Profiel</a>
+    <p>Afspraken</p>
     <a href="adminappointments.php">Afspraken</a>
+    <p>klanten</p>
     <a href="adminusers.php">Klanten</a>
 </main>
 <footer>

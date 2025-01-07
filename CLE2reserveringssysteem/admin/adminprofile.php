@@ -1,3 +1,5 @@
+<?php
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -15,7 +17,9 @@
 <header>
     <h1>Admin Profile</h1>
 </header>
-<main></main>
+<main>
+    <a  href="admin.php">Adminhome</a>
+</main>
 <footer>
     <p>insert website's footer bar here</p>
 </footer>

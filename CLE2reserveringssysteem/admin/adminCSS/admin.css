@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    background-color: #636267;
+    font-family: "Baskerville Old Face";
+    color: #367283;
+}
+nav {
+    text-align: center;
+}
+header {
+    text-align: center;
+}
+main {
+    text-align: center;
+}
+footer {
+    text-align: center;
+}
+
