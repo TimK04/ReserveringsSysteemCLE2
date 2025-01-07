@@ -28,6 +28,7 @@ main {
 nav {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 0 10vw;
     background-color: var(--navAndFooter);
 }
@@ -62,6 +63,11 @@ nav {
     color: var(--textColorYellow);
 }
 
+.login img {
+    width: 45px;
+    margin: 0 2px;
+}
+
 footer {
     background-color: var(--navAndFooter);
     padding: 2vh 10vw;
@@ -73,18 +79,23 @@ footer p {
     color: var(--textColorYellow);
 }
 
+.underlined {
+    text-decoration: underline;
+    padding-bottom: 2px;
+}
+
 footer a {
     text-decoration: none;
     color: var(--textColorYellow);
     padding: 1px 0;
 }
 
-.information {
+.information, .categorieën {
     display: flex;
     flex-direction: column;
 }
 
 .contact a img {
     padding: 5px;
-    height: 40px;
+    height: 50px;
 }
