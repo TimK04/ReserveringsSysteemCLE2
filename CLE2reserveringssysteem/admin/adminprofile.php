@@ -16,6 +16,7 @@
 </nav>
 <header>
     <h1>Admin Profile</h1>
+    <p>Hoi Thomas</p>
 </header>
 <main>
     <a  href="admin.php">Adminhome</a>

@@ -16,6 +16,7 @@
 </nav>
 <header>
     <h1>Admin Page</h1>
+    <p>Hoi Thomas</p>
 </header>
 <main>
     <p>Profiel</p>
