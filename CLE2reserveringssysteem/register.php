@@ -16,6 +16,7 @@ if (isset($_POST['submit'])) {
     $lastName = mysqli_escape_string($db, $_POST['lastName']);
     $email = mysqli_escape_string($db, $_POST['email']);
     $password = mysqli_escape_string($db, $_POST['password']);
+    $dubblePassword = mysqli_escape_string($db, $_POST['passwordCheck']);
 
 
     if ($firstName == '') {
@@ -27,8 +28,17 @@ if (isset($_POST['submit'])) {
     if ($email == '') {
         $errors['email'] = 'Uw email is verplicht';
     }
+    if ($dubblePassword == '') {
+        $errors['passwordCheck'] = 'u moet uw wachtwoord opnieuw invullen!';
+    }
+    if ($password !== $dubblePassword) {
+        $errors['dubblePassword'] = 'Uw wachtwoord komt niet overeen!';
+    }
     if ($password == '') {
         $errors['password'] = 'uw wachtwoord is verplicht';
+    }
+    if (empty($_POST['conditions'])) {
+        $errors['conditions'] = 'u moet de voorwaardes accepteren!! ';
     }
 
     $sql = " 
@@ -86,15 +96,27 @@ mysqli_close($db);
     <input id="email" type="email" name="email" value="<?= htmlentities($email) ?? '' ?>">
     <p>
         <?= $errors['email'] ?? '' ?>
+        <?= $errors['dubbleMail'] ?? '' ?>
     </p>
     <label for="password">wachtwoord</label>
     <input id="password" type="password" name="password">
     <p>
         <?= $errors['password'] ?? '' ?>
     </p>
+    <label for="passwordCheck">Herhaal wachtwoord</label>
+    <input id="passwordCheck" type="password" name="passwordCheck">
+
     <p>
-        <?= $errors['dubbleMail'] ?? '' ?>
+        <?= $errors['dubblePassword'] ?? '' ?>
+
+        <?= $errors['passwordCheck'] ?? '' ?>
     </p>
+    <label for="conditions">ik accepteer de voorwaardes</label>
+    <input id="conditions" type="checkbox" name="conditions">
+    <p>
+        <?= $errors['conditions'] ?? '' ?>
+    </p>
+
     <button type="submit" name="submit">Login</button>
 </form>
 </body>
