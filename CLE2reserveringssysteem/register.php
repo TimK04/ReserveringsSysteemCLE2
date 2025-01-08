@@ -4,6 +4,10 @@ require_once 'include/database.php';
 session_start();
 $login = false;
 
+$firstName = mysqli_escape_string($db, $_POST['firstName'] ?? '');
+$lastName = mysqli_escape_string($db, $_POST['lastName'] ?? '');
+$email = mysqli_escape_string($db, $_POST['email'] ?? '');
+
 
 if (isset($_POST['submit'])) {
 
@@ -35,6 +39,7 @@ if (isset($_POST['submit'])) {
     ";
         $result = mysqli_query($db, $query)
         or die('Error ' . mysqli_error($db) . 'with query ' . $query);
+
         header('location: login.php');
         exit;
     };
@@ -58,17 +63,17 @@ mysqli_close($db);
 </h1>
 <form action="" method="post">
     <label for="firstName">voornaam</label>
-    <input id="firstName" type="text" name="firstName">
+    <input id="firstName" type="text" name="firstName" value="<?= htmlentities($firstName) ?? '' ?>">
     <p>
         <?= $errors['lastName'] ?? '' ?>
     </p>
     <label for="lastName">achternaam</label>
-    <input id="lastName" type="text" name="lastName">
+    <input id="lastName" type="text" name="lastName" value="<?= htmlentities($lastName) ?? '' ?>">
     <p>
         <?= $errors['firstName'] ?? '' ?>
     </p>
     <label for="email">E-mail</label>
-    <input id="email" type="email" name="email">
+    <input id="email" type="email" name="email" value="<?= htmlentities($email) ?? '' ?>">
     <p>
         <?= $errors['email'] ?? '' ?>
     </p>

@@ -28,8 +28,27 @@
     </div>
     <a class="login" href="login.php"><img src="images/inlog.png" alt="Profiel"></a>
 </nav>
+<header>
+    <h1>Intake gesprek inplannen:</h1>
+    <p class="important">15 min intake gesprek</p>
+</header>
 <main>
-    <h1>Intake gesprek inplannen</h1>
+    <form class="intake" action="">
+        <div>
+            <p>insert calendar</p>
+        </div>
+        <div class="column">
+            <label for="first_name">Voornaam:</label>
+            <input type="text" id="first_name" name="first_name">
+            <label for="last_name">Achternaam:</label>
+            <input type="text" id="last_name" name="last_name">
+            <label for="email">Emailadres:</label>
+            <input type="text" id="email" name="email">
+            <label for="needs">Wat verwacht je van ons:</label>
+            <textarea name="needs" id="needs" cols="30" rows="10"></textarea>
+            <button class="button" type="submit" name="submit">Inplannen</button>
+        </div>
+    </form>
 </main>
 <footer>
     <div class="nav_img">
