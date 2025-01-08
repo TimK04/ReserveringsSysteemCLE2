@@ -37,7 +37,7 @@
         <a href=""><img class="logo" src="images/inlog.png" alt="Profiel"></a>
         <div class="dropdown_items">
             <a href="">Profiel</a>
-            <a href="">Logout</a>
+            <a href="logout.php">Logout</a>
         </div>
     </div>
 </nav>
@@ -48,6 +48,9 @@
 <main>
     <form class="intake" action="">
         <div class="calender">
+            <div>
+                <h2>Kies een datum</h2>
+            </div>
             <p>insert calendar</p>
         </div>
         <div class="column">
