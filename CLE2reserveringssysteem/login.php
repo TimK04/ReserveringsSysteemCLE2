@@ -12,8 +12,10 @@ oke!
  */
 require_once 'include/database.php';
 session_start();
+
 $login = false;
 
+$email = mysqli_escape_string($db, $_POST['email'] ?? '');
 
 if (isset($_POST['submit'])) {
 
@@ -29,14 +31,14 @@ if (isset($_POST['submit'])) {
     }
     if (empty($errors)) {
         $query = "
-       SELECT 'email' FROM users WHERE 'email' = '$email'
+       SELECT 'email' FROM users WHERE `email` = '$email'
        ";
         $result = mysqli_query($db, $query)
         or die('Error: ' . mysqli_error($db) . 'with query ' . $query);
 
         if (mysqli_num_rows($result) == 1) {
             $query = "
-        SELECT * FROM `users` WHERE 'email' = '$email'
+        SELECT * FROM `users` WHERE `email` = '$email'
         ";
             $result = mysqli_query($db, $query)
             or die('Error: ' . mysqli_error($db) . 'with query ' . $query);
@@ -44,8 +46,19 @@ if (isset($_POST['submit'])) {
                 $hash = $row;
             }
 
+
+        } else {
+            $errors['loginFailed'] = 'Login failed';
         }
-      
+        if (empty($errors)) {
+            if (password_verify($password, $hash['password']) == true) {
+                $_SESSION['Login'] = true;
+                header('location: index.php');
+                exit();
+            } else {
+                $errors['loginFailed'] = 'Uw logininformatie in niet correct';
+            }
+        }
     }
 }
 
@@ -65,7 +78,7 @@ mysqli_close($db);
 <form action="" method="post">
 
     <label for="email">E-mail</label>
-    <input id="email" type="email" name="email" value="">
+    <input id="email" type="email" name="email" value="<?= htmlentities($email) ?? '' ?>">
     <p>
         <?= $errors['email'] ?? '' ?>
     </p>
@@ -73,6 +86,9 @@ mysqli_close($db);
     <input id="password" type="password" name="password">
     <p>
         <?= $errors['password'] ?? '' ?>
+    </p>
+    <p>
+        <?= $errors['loginFailed'] ?? '' ?>
     </p>
     <button type="submit" name="submit">Login</button>
 </form>
