@@ -30,6 +30,16 @@ if (isset($_POST['submit'])) {
     if ($password == '') {
         $errors['password'] = 'uw wachtwoord is verplicht';
     }
+
+    $sql = " 
+SELECT `email`  FROM users WHERE `email` = '$email'
+";
+    $result = mysqli_query($db, $sql)
+    or die('Error ' . mysqli_error($db) . 'with query ' . $sql);
+    if (mysqli_num_rows($result) > 0) {
+        $errors['dubbleMail'] = 'dit email is al gebruikt';
+    }
+
     if (empty($errors)) {
         $password = password_hash($password, PASSWORD_DEFAULT);
 
@@ -81,6 +91,9 @@ mysqli_close($db);
     <input id="password" type="password" name="password">
     <p>
         <?= $errors['password'] ?? '' ?>
+    </p>
+    <p>
+        <?= $errors['dubbleMail'] ?? '' ?>
     </p>
     <button type="submit" name="submit">Login</button>
 </form>
