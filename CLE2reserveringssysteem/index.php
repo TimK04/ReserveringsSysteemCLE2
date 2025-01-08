@@ -30,15 +30,17 @@
     </div>
 </nav>
 <header>
-    <h1>Auniek Interieur</h1>
-    <p>De unieke uitstraling <br> die jouw huis verdiend!</p>
+    <div>
+        <h1>Auniek Interieur</h1>
+        <p id="psize">De unieke uitstraling <br> die jouw huis verdiend!</p>
+    </div>
 </header>
 <main>
     <section class="werkwijzen">
         <h2>Onze werkwijzen</h2>
         <div class="bouw-container">
             <article>
-                <div id="nieuwbouw-back">
+                <div class="werkgrootte" id="nieuwbouw-back">
                     <h3>Nieuwbouw</h3>
                 </div>
                 <div class="button">
@@ -46,7 +48,7 @@
                 </div>
             </article>
             <article>
-                <div id="bestaand-back">
+                <div class="werkgrootte" id="bestaand-back">
                     <h3>Bestaande bouw</h3>
                 </div>
                 <div class="button">
@@ -59,11 +61,16 @@
         <h2>Reviews</h2>
         <div class="review-container">
             <article class="review-back">
-                <h3>Harry de Jong</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi cum deleniti dicta dolorem error
-                    facilis illum inventore laborum natus nihil nobis, nulla perferendis porro provident quibusdam
-                    similique sit
-                    temporibus vel.</p>
+                <div>
+                    <h3>Harry de Jong</h3>
+                </div>
+                <div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi cum deleniti
+                        dicta dolorem error
+                        facilis illum inventore laborum natus nihil nobis, nulla perferendis porro provident quibusdam
+                        similique sit
+                        temporibus vel.</p>
+                </div>
                 <div>
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
@@ -73,12 +80,17 @@
                 </div>
             </article>
             <article class="review-back">
-                <h3>Ilse Vermolen</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur aut consequatur consequuntur
-                    dolore
-                    dolorem impedit ipsam maiores officia quasi, quis soluta unde voluptas. At sunt ullam unde.
-                    Accusantium,
-                    cupiditate exercitationem!</p>
+                <div>
+                    <h3>Ilse Vermolen</h3>
+                </div>
+                <div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur aut
+                        consequatur consequuntur
+                        dolore
+                        dolorem impedit ipsam maiores officia quasi, quis soluta unde voluptas. At sunt ullam unde.
+                        Accusantium,
+                        cupiditate exercitationem!</p>
+                </div>
                 <div>
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>

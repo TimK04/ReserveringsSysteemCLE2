@@ -75,49 +75,96 @@ mysqli_close($db);
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/user.css">
     <title>Document</title>
 </head>
 <body>
-<h1>
-    Register *bedrijf*
-</h1>
-<form action="" method="post">
-    <label for="firstName">voornaam</label>
-    <input id="firstName" type="text" name="firstName" value="<?= htmlentities($firstName) ?? '' ?>">
-    <p>
-        <?= $errors['lastName'] ?? '' ?>
-    </p>
-    <label for="lastName">achternaam</label>
-    <input id="lastName" type="text" name="lastName" value="<?= htmlentities($lastName) ?? '' ?>">
-    <p>
-        <?= $errors['firstName'] ?? '' ?>
-    </p>
-    <label for="email">E-mail</label>
-    <input id="email" type="email" name="email" value="<?= htmlentities($email) ?? '' ?>">
-    <p>
-        <?= $errors['email'] ?? '' ?>
-        <?= $errors['dubbleMail'] ?? '' ?>
-    </p>
-    <label for="password">wachtwoord</label>
-    <input id="password" type="password" name="password">
-    <p>
-        <?= $errors['password'] ?? '' ?>
-    </p>
-    <label for="passwordCheck">Herhaal wachtwoord</label>
-    <input id="passwordCheck" type="password" name="passwordCheck">
+<nav>
+    <div class="nav_img">
+        <img src="images/logo.png" alt="logo Auniek Interieur">
+    </div>
+    <div class="empty"></div>
+    <div class="nav_links">
+        <a href="index.php">Home</a>
+        <a href="overons.php">Over Auniek</a>
+        <a href="portfolio.php">Portfolio</a>
+        <a href="reservering.php">Intake</a>
+        <div class="dropdown">
+            <button class="nav_link" href="werkwijzen.php">Werkwijzen</button>
+            <div class="dropdown_items">
+                <a href="">Bestaande bouw</a>
+                <a href="">Nieuw bouw</a>
+            </div>
+        </div>
+        <a href="blog.php">Blog</a>
+        <a href="contact.php">Contact</a>
+    </div>
+    <div class="dropdown">
+        <a href=""><img class="logo" src="images/inlog.png" alt="Profiel"></a>
+        <div class="dropdown_items">
+            <a href="">Profiel</a>
+            <a href="">Logout</a>
+        </div>
+    </div>
+</nav>
+<header>
+    <h1>
+        Register
+    </h1>
+</header>
+<main>
+    <form action="" method="post">
+        <div class="container">
+            <label for="firstName">voornaam</label>
+        </div>
+        <input id="firstName" type="text" name="firstName" value="<?= htmlentities($firstName) ?? '' ?>">
+        <p>
+            <?= $errors['lastName'] ?? '' ?>
+        </p>
+        <div class="container">
+            <label for="lastName">achternaam</label>
+        </div>
+        <input id="lastName" type="text" name="lastName" value="<?= htmlentities($lastName) ?? '' ?>">
+        <p>
+            <?= $errors['firstName'] ?? '' ?>
+        </p>
+        <div class="container">
+            <label for="email">E-mail</label>
+        </div>
+        <input id="email" type="email" name="email" value="<?= htmlentities($email) ?? '' ?>">
+        <p>
+            <?= $errors['email'] ?? '' ?>
+            <?= $errors['dubbleMail'] ?? '' ?>
+        </p>
+        <div class="container">
+            <label for="password">wachtwoord</label>
+        </div>
+        <input id="password" type="password" name="password">
+        <p>
+            <?= $errors['password'] ?? '' ?>
+        </p>
+        <div class="container">
+            <label for="passwordCheck">Herhaal wachtwoord</label>
+        </div>
+        <input id="passwordCheck" type="password" name="passwordCheck">
 
-    <p>
-        <?= $errors['dubblePassword'] ?? '' ?>
+        <p>
+            <?= $errors['dubblePassword'] ?? '' ?>
 
-        <?= $errors['passwordCheck'] ?? '' ?>
-    </p>
-    <label for="conditions">ik accepteer de voorwaardes</label>
-    <input id="conditions" type="checkbox" name="conditions">
-    <p>
-        <?= $errors['conditions'] ?? '' ?>
-    </p>
+            <?= $errors['passwordCheck'] ?? '' ?>
+        </p>
+        <div class="container">
+            <input id="conditions" type="checkbox" name="conditions">
 
-    <button type="submit" name="submit">Login</button>
-</form>
+            <label for="conditions">ik accepteer de voorwaardes</label>
+        </div>
+        <p>
+            <?= $errors['conditions'] ?? '' ?>
+        </p>
+
+        <button class="button" type="submit" name="submit">registreren</button>
+    </form>
+</main>
 </body>
 </html>

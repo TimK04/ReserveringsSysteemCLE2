@@ -1,0 +1,41 @@
+form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 0 25vw;
+
+}
+
+main {
+    display: flex;
+    text-align: center;
+}
+
+.container {
+    margin-top: 1.5%;
+    margin-bottom: 1%;
+
+}
+
+header {
+    background-image: url("../images/header.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 26vh;
+}
+
+.button {
+    margin: 0.5vw 5vw;
+    background-color: var(--colorButton);
+    color: var(--textColorBrown);
+    font-family: "Baskerville Old Face", serif;
+    font-size: 1.25rem;
+    padding: 5px;
+    border-radius: 7px;
+    border: none;
+}
