@@ -5,7 +5,6 @@
     --textColorYellow: #EEE3B4;
     --textColorBrown: #7B6340;
     --colorButton: #EEE3B4;
-    --colorCalender: #7B6340;
 }
 
 * {
@@ -75,8 +74,7 @@ nav {
     color: var(--textColorYellow);
 }
 
-
-.dropdown_container {
+.login img {
     width: 45px;
     margin: 0 2px;
 }
@@ -101,11 +99,6 @@ form div {
     flex: 1;
 }
 
-.calender {
-    background-color: var(--colorCalender);
-    border-radius: 15px;
-}
-
 label {
     color: var(--textColorBrown);
     font-family: "Baskerville Old Face", serif;
@@ -125,7 +118,6 @@ input, textarea {
 .intake {
     display: flex;
     justify-content: space-between;
-    gap: 1vw;
 }
 
 .column {
@@ -175,4 +167,66 @@ footer a {
     height: 50px;
 }
 
+header {
+    background-image: url("../images/header.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    text-align: center;
+}
+
+main article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bouw-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.review-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#nieuwbouw-back {
+    background-image: url("../images/header.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 5px;
+}
+
+#bestaand-back {
+    background-image: url("../images/header.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 5px;
+}
+
+.review-back {
+    text-align: center;
+    background-color: #7B6340;
+    border-radius: 5px;
+}
+
+.button a {
+    color: var(--textColorBrown);
+    font-family: "Baskerville Old Face", serif;
+    font-size: 1.25rem;
+    text-decoration: none;
+}
 
