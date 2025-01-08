@@ -9,6 +9,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/intake.css">
     <title>Document</title>
 </head>
 <body>
@@ -22,14 +23,22 @@
         <a href="overons.php">Over Auniek</a>
         <a href="portfolio.php">Portfolio</a>
         <a href="reservering.php">Intake</a>
-        <a href="werkwijzen.php">Werkwijzen</a>
+        <div class="dropdown">
+            <button class="nav_link" href="werkwijzen.php">Werkwijzen</button>
+            <div class="dropdown_items">
+                <a href="">Bestaande bouw</a>
+                <a href="">Nieuw bouw</a>
+            </div>
+        </div>
         <a href="blog.php">Blog</a>
         <a href="contact.php">Contact</a>
     </div>
-    <img class="dropdown_container" src="images/inlog.png" alt="Profiel">
     <div class="dropdown">
-        <a href="">Profiel</a>
-        <a href="">Logout</a>
+        <a href=""><img class="logo" src="images/inlog.png" alt="Profiel"></a>
+        <div class="dropdown_items">
+            <a href="">Profiel</a>
+            <a href="">Logout</a>
+        </div>
     </div>
 </nav>
 <header>
