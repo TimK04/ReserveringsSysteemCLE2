@@ -77,37 +77,10 @@ mysqli_close($db);
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/user.css">
-    <title>Document</title>
+    <title>Registreren</title>
 </head>
 <body>
-<nav>
-    <div class="nav_img">
-        <img src="images/logo.png" alt="logo Auniek Interieur">
-    </div>
-    <div class="empty"></div>
-    <div class="nav_links">
-        <a href="index.php">Home</a>
-        <a href="overons.php">Over Auniek</a>
-        <a href="portfolio.php">Portfolio</a>
-        <a href="reservering.php">Intake</a>
-        <div class="dropdown">
-            <button class="nav_link" href="werkwijzen.php">Werkwijzen</button>
-            <div class="dropdown_items">
-                <a href="">Bestaande bouw</a>
-                <a href="">Nieuw bouw</a>
-            </div>
-        </div>
-        <a href="blog.php">Blog</a>
-        <a href="contact.php">Contact</a>
-    </div>
-    <div class="dropdown">
-        <a href=""><img class="logo" src="images/inlog.png" alt="Profiel"></a>
-        <div class="dropdown_items">
-            <a href="">Profiel</a>
-            <a href="">Logout</a>
-        </div>
-    </div>
-</nav>
+<?php require_once 'include/nav.php' ?>
 <header>
     <h1>
         Register
@@ -116,14 +89,14 @@ mysqli_close($db);
 <main>
     <form action="" method="post">
         <div class="container">
-            <label for="firstName">voornaam</label>
+            <label for="firstName">Voornaam</label>
         </div>
         <input id="firstName" type="text" name="firstName" value="<?= htmlentities($firstName) ?? '' ?>">
         <p>
             <?= $errors['lastName'] ?? '' ?>
         </p>
         <div class="container">
-            <label for="lastName">achternaam</label>
+            <label for="lastName">Achternaam</label>
         </div>
         <input id="lastName" type="text" name="lastName" value="<?= htmlentities($lastName) ?? '' ?>">
         <p>
@@ -138,7 +111,7 @@ mysqli_close($db);
             <?= $errors['dubbleMail'] ?? '' ?>
         </p>
         <div class="container">
-            <label for="password">wachtwoord</label>
+            <label for="password">Wachtwoord</label>
         </div>
         <input id="password" type="password" name="password">
         <p>
@@ -157,14 +130,16 @@ mysqli_close($db);
         <div class="container">
             <input id="conditions" type="checkbox" name="conditions">
 
-            <label for="conditions">ik accepteer de voorwaardes</label>
+            <label for="conditions">Ik accepteer de voorwaardes</label>
         </div>
         <p>
             <?= $errors['conditions'] ?? '' ?>
         </p>
-
-        <button class="button" type="submit" name="submit">registreren</button>
+        <div class="registerStyle">
+            <button class="button" type="submit" name="submit">registreren</button>
+        </div>
     </form>
 </main>
+<?php include_once 'include/footer.php' ?>
 </body>
 </html>

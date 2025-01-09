@@ -71,26 +71,48 @@ mysqli_close($db);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Document</title>
+    <title>log-in</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/user.css">
 </head>
 <body>
-<h1> Inloggen *bedrijf* </h1>
-<form action="" method="post">
+<?php include_once 'include/nav.php' ?>
+<header>
+    <h1> Inloggen *bedrijf* </h1>
+</header>
+<main>
 
-    <label for="email">E-mail</label>
-    <input id="email" type="email" name="email" value="<?= htmlentities($email) ?? '' ?>">
-    <p>
-        <?= $errors['email'] ?? '' ?>
-    </p>
-    <label for="password">Wachtwoord</label>
-    <input id="password" type="password" name="password">
-    <p>
-        <?= $errors['password'] ?? '' ?>
-    </p>
-    <p>
-        <?= $errors['loginFailed'] ?? '' ?>
-    </p>
-    <button type="submit" name="submit">Login</button>
-</form>
+
+    <form action="" method="post">
+        <div class="container">
+            <label for="email">E-mail</label>
+        </div>
+        <input id="email" type="email" name="email" value="<?= htmlentities($email) ?? '' ?>">
+        <p>
+            <?= $errors['email'] ?? '' ?>
+        </p>
+        <div class="container">
+            <label for="password">Wachtwoord</label>
+        </div>
+        <input id="password" type="password" name="password">
+        <p>
+            <?= $errors['password'] ?? '' ?>
+        </p>
+        <p>
+            <?= $errors['loginFailed'] ?? '' ?>
+        </p>
+        <div class="buttonStyle">
+            <button class="button" type="submit" name="submit">Login</button>
+        </div>
+        <div class="styleLink">
+            <p class="textStyle">
+                Nog geen account?
+            </p>
+            <a href="register.php">Registreren</a>
+        </div>
+
+    </form>
+</main>
+<?php include_once 'include/footer.php' ?>
 </body>
 </html>
