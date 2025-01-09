@@ -20,10 +20,10 @@ if (isset($_POST['submit'])) {
 
 
     if ($firstName == '') {
-        $errors['firstName'] = 'uw wachtwoord is verplicht';
+        $errors['firstName'] = 'uw voornaam is verplicht';
     }
     if ($lastName == '') {
-        $errors['lastName'] = 'uw wachtwoord is verplicht';
+        $errors['lastName'] = 'uw achternaam is verplicht';
     }
     if ($email == '') {
         $errors['email'] = 'Uw email is verplicht';

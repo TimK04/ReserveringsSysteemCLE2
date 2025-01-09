@@ -39,3 +39,9 @@ header {
     border-radius: 7px;
     border: none;
 }
+
+button:hover {
+    color: var(--colorButton);
+    background-color: var(--textColorBrown);
+    transition: 1s;
+}
