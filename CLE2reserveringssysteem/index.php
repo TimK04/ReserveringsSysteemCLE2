@@ -6,14 +6,14 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Homepage</title>
+    <title>Auniek Interieur - Home</title>
 </head>
 <body>
 <?php require_once 'include/nav.php' ?>
 <header>
     <div>
         <h1>Auniek Interieur</h1>
-        <p id="psize">De unieke uitstraling <br> die jouw huis verdiend!</p>
+        <p id="psize">Jouw perfecte interieur <br> van concept tot realisatie! </p>
     </div>
 </header>
 <main>
