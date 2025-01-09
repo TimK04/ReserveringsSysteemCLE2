@@ -1,6 +1,6 @@
 <footer>
     <div class="nav_img">
-        <img src="images/logo.png" alt="logo Auniek Interieur">
+        <img src="images/logo.webp" alt="logo Auniek Interieur">
     </div>
     <div class="categorieën">
         <p class="underlined">Categorieën</p>
@@ -23,9 +23,9 @@
         <p>Tel: 06-48729036</p>
         <p>Email: info@auniekinterieurs.nl</p>
         <div>
-            <a href="https://nl.pinterest.com/auniekinterieurs/"><img src="images/pinterest.png" alt="Pinterest"></a>
+            <a href="https://nl.pinterest.com/auniekinterieurs/"><img src="images/pinterest.webp" alt="Pinterest"></a>
             <a href="https://www.instagram.com/auniek_interieurs/profilecard/?igsh=czk1ODl0bzF1OTl2"><img
-                        src="images/instagram.png" alt="Instagram"></a>
+                        src="images/instagram.webp" alt="Instagram"></a>
         </div>
     </div>
 </footer>
