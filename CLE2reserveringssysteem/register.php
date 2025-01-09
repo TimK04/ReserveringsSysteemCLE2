@@ -82,7 +82,7 @@ mysqli_close($db);
 <body>
 <nav>
     <div class="nav_img">
-        <img src="images/logo.png" alt="logo Auniek Interieur">
+        <img src="images/logo.webp" alt="logo Auniek Interieur">
     </div>
     <div class="empty"></div>
     <div class="nav_links">
@@ -101,7 +101,7 @@ mysqli_close($db);
         <a href="contact.php">Contact</a>
     </div>
     <div class="dropdown">
-        <a href=""><img class="logo" src="images/inlog.png" alt="Profiel"></a>
+        <a href=""><img class="logo" src="images/inlog.webp" alt="Profiel"></a>
         <div class="dropdown_items">
             <a href="">Profiel</a>
             <a href="">Logout</a>
