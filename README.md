@@ -1,6 +1,6 @@
 # cle2
 
-Dit is repository van team 17. Regels, basisinformatie, taakverdeling, logboek en feedback zullen in het gezamelijke word kladblok te vinden zijn. Agenda word bijgehouden in Trello.
+Dit is repository van team 17. Regels, basisinformatie, taakverdeling, logboek en feedback zullen in het gezamelijke word kladblok te vinden zijn. Agenda word bijgehouden in Trello. De One Drive word gebruikt voor gezamelijke bewijzen en extra foto's van de opdrachtgevers.
 
 ## kladblok
 
@@ -9,3 +9,7 @@ Dit is repository van team 17. Regels, basisinformatie, taakverdeling, logboek e
 ## Trello
 
 [Trello](https://trello.com/b/tR0bY2md/cle2-team-17)
+
+## One Drive
+
+[onedrive](https://hrnl-my.sharepoint.com/personal/0998374_hr_nl/_layouts/15/onedrive.aspx?id=%2Fpersonal%2F0998374%5Fhr%5Fnl%2FDocuments%2FCLE2)
