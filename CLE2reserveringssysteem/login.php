@@ -88,17 +88,17 @@ mysqli_close($db);
             <label for="email">E-mail</label>
         </div>
         <input id="email" type="email" name="email" value="<?= htmlentities($email) ?? '' ?>">
-        <p>
+        <p class="error">
             <?= $errors['email'] ?? '' ?>
         </p>
         <div class="container">
             <label for="password">Wachtwoord</label>
         </div>
         <input id="password" type="password" name="password">
-        <p>
+        <p class="error">
             <?= $errors['password'] ?? '' ?>
         </p>
-        <p>
+        <p class="error">
             <?= $errors['loginFailed'] ?? '' ?>
         </p>
         <div class="buttonStyle">

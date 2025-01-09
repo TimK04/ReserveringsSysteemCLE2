@@ -86,3 +86,7 @@ button:hover {
 .registerStyle .button {
 
 }
+
+.error {
+    color: red;
+}

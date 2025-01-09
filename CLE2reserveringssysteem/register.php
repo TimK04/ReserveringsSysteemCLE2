@@ -20,25 +20,28 @@ if (isset($_POST['submit'])) {
 
 
     if ($firstName == '') {
-        $errors['firstName'] = 'uw voornaam is verplicht';
+        $errors['firstName'] = 'Uw voornaam is verplicht';
     }
     if ($lastName == '') {
-        $errors['lastName'] = 'uw achternaam is verplicht';
+        $errors['lastName'] = 'Uw achternaam is verplicht';
+    }
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errors['email'] = 'Dit email bestaat niet';
     }
     if ($email == '') {
         $errors['email'] = 'Uw email is verplicht';
     }
     if ($dubblePassword == '') {
-        $errors['passwordCheck'] = 'u moet uw wachtwoord opnieuw invullen!';
+        $errors['passwordCheck'] = 'U moet uw wachtwoord opnieuw invullen!';
     }
     if ($password !== $dubblePassword) {
         $errors['dubblePassword'] = 'Uw wachtwoord komt niet overeen!';
     }
     if ($password == '') {
-        $errors['password'] = 'uw wachtwoord is verplicht';
+        $errors['password'] = 'Uw wachtwoord is verplicht';
     }
     if (empty($_POST['conditions'])) {
-        $errors['conditions'] = 'u moet de voorwaardes accepteren!! ';
+        $errors['conditions'] = 'U moet de voorwaardes accepteren!! ';
     }
 
     $sql = " 
@@ -47,7 +50,7 @@ SELECT `email`  FROM users WHERE `email` = '$email'
     $result = mysqli_query($db, $sql)
     or die('Error ' . mysqli_error($db) . 'with query ' . $sql);
     if (mysqli_num_rows($result) > 0) {
-        $errors['dubbleMail'] = 'dit email is al gebruikt';
+        $errors['dubbleMail'] = 'Dit email is al gebruikt';
     }
 
     if (empty($errors)) {
@@ -92,21 +95,21 @@ mysqli_close($db);
             <label for="firstName">Voornaam</label>
         </div>
         <input id="firstName" type="text" name="firstName" value="<?= htmlentities($firstName) ?? '' ?>">
-        <p>
+        <p class="error">
             <?= $errors['lastName'] ?? '' ?>
         </p>
         <div class="container">
             <label for="lastName">Achternaam</label>
         </div>
         <input id="lastName" type="text" name="lastName" value="<?= htmlentities($lastName) ?? '' ?>">
-        <p>
+        <p class="error">
             <?= $errors['firstName'] ?? '' ?>
         </p>
         <div class="container">
             <label for="email">E-mail</label>
         </div>
         <input id="email" type="email" name="email" value="<?= htmlentities($email) ?? '' ?>">
-        <p>
+        <p class="error">
             <?= $errors['email'] ?? '' ?>
             <?= $errors['dubbleMail'] ?? '' ?>
         </p>
@@ -114,7 +117,7 @@ mysqli_close($db);
             <label for="password">Wachtwoord</label>
         </div>
         <input id="password" type="password" name="password">
-        <p>
+        <p class="error">
             <?= $errors['password'] ?? '' ?>
         </p>
         <div class="container">
@@ -122,7 +125,7 @@ mysqli_close($db);
         </div>
         <input id="passwordCheck" type="password" name="passwordCheck">
 
-        <p>
+        <p class="error">
             <?= $errors['dubblePassword'] ?? '' ?>
 
             <?= $errors['passwordCheck'] ?? '' ?>
@@ -132,7 +135,7 @@ mysqli_close($db);
 
             <label for="conditions">Ik accepteer de voorwaardes</label>
         </div>
-        <p>
+        <p class="error">
             <?= $errors['conditions'] ?? '' ?>
         </p>
         <div class="registerStyle">
