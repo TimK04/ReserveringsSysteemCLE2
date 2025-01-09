@@ -45,3 +45,16 @@ form div {
     border-radius: 15px;
     text-align: center;
 }
+
+.error {
+    color: red;
+}
+
+.succesStyle {
+    text-align: center;
+}
+
+.succes {
+    color: var(--textColorBrown);
+    font-size: 1.25rem;
+}
