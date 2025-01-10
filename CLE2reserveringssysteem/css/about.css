@@ -18,3 +18,28 @@ header div {
     align-items: center;
     text-align: center;
 }
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+main div {
+    padding: 5px;
+    margin: 5px;
+}
+
+main div img {
+    width: 20vw;
+    border-radius: 15px;
+    margin: 5px;
+    box-shadow: 2px 2px 5px 5px #DADFE2;
+}
+
+main div p {
+    width: 30vw;
+    padding: 5px;
+    margin: 5px;
+}
