@@ -4,10 +4,6 @@ require_once 'include/database.php';
 session_start();
 $login = false;
 
-$firstName = mysqli_escape_string($db, $_POST['firstName'] ?? '');
-$lastName = mysqli_escape_string($db, $_POST['lastName'] ?? '');
-$email = mysqli_escape_string($db, $_POST['email'] ?? '');
-
 
 if (isset($_POST['submit'])) {
 
@@ -94,21 +90,21 @@ mysqli_close($db);
         <div class="container">
             <label for="firstName">Voornaam</label>
         </div>
-        <input id="firstName" type="text" name="firstName" value="<?= htmlentities($firstName) ?? '' ?>">
+        <input id="firstName" type="text" name="firstName" value="<?= htmlentities($firstName ?? '') ?>">
         <p class="error">
             <?= $errors['lastName'] ?? '' ?>
         </p>
         <div class="container">
             <label for="lastName">Achternaam</label>
         </div>
-        <input id="lastName" type="text" name="lastName" value="<?= htmlentities($lastName) ?? '' ?>">
+        <input id="lastName" type="text" name="lastName" value="<?= htmlentities($lastName ?? '') ?>">
         <p class="error">
             <?= $errors['firstName'] ?? '' ?>
         </p>
         <div class="container">
             <label for="email">E-mail</label>
         </div>
-        <input id="email" type="email" name="email" value="<?= htmlentities($email) ?? '' ?>">
+        <input id="email" type="email" name="email" value="<?= htmlentities($email ?? '') ?>">
         <p class="error">
             <?= $errors['email'] ?? '' ?>
             <?= $errors['dubbleMail'] ?? '' ?>

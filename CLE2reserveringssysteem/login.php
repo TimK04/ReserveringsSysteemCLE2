@@ -15,7 +15,6 @@ session_start();
 
 $login = false;
 
-$email = mysqli_escape_string($db, $_POST['email'] ?? '');
 
 if (isset($_POST['submit'])) {
 
@@ -89,7 +88,7 @@ mysqli_close($db);
         <div class="container">
             <label for="email">E-mail</label>
         </div>
-        <input id="email" type="email" name="email" value="<?= htmlentities($email) ?? '' ?>">
+        <input id="email" type="email" name="email" value="<?= htmlentities($email ?? '') ?>">
         <p class="error">
             <?= $errors['email'] ?? '' ?>
         </p>

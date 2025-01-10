@@ -1,10 +1,11 @@
 <?php
+/** @var mysqli $db */
 session_start();
 if ($_SESSION['login'] == true) {
 
-    $firstName = $_SESSION['firstName'];
-    $lastName = $_SESSION['lastName'];
-    $email = $_SESSION['email'];
+    $firstName = mysqli_escape_string($db, $_SESSION['firstName']);
+    $lastName = mysqli_escape_string($db, $_SESSION['lastName']);
+    $email = mysqli_escape_string($db, $_SESSION['email']);
 }
 
 
