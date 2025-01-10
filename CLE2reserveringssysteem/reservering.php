@@ -1,7 +1,9 @@
 <?php
 /** @var mysqli $db */
 session_start();
-if ($_SESSION['login'] == true) {
+require_once 'include/database.php';
+
+if (isset($_SESSION['Login'])) {
 
     $firstName = mysqli_escape_string($db, $_SESSION['firstName']);
     $lastName = mysqli_escape_string($db, $_SESSION['lastName']);
@@ -10,9 +12,6 @@ if ($_SESSION['login'] == true) {
 
 
 if (isset($_POST['submit'])) {
-    /** @var mysqli $db */
-    require_once 'include/database.php';
-
     $firstName = mysqli_escape_string($db, $_POST['first_name']);
     $lastName = mysqli_escape_string($db, $_POST['last_name']);
     $email = mysqli_escape_string($db, $_POST['email']);

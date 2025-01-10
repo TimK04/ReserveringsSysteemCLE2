@@ -21,7 +21,6 @@ if (isset($_POST['submit'])) {
     $email = mysqli_escape_string($db, $_POST['email']);
     $password = mysqli_escape_string($db, $_POST['password']);
 
-
     if ($email == '') {
         $errors['email'] = 'Uw email is verplicht';
     }
@@ -50,7 +49,7 @@ if (isset($_POST['submit'])) {
         }
         if (empty($errors)) {
             if (password_verify($password, $hash['password']) == true) {
-                $_SESSION['login'] = true;
+                $_SESSION['Login'] = true;
                 $_SESSION['firstName'] = $hash['first_name'];
                 $_SESSION['lastName'] = $hash['last_name'];
                 $_SESSION['email'] = $hash['email'];
