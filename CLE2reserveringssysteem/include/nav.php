@@ -1,6 +1,6 @@
 <nav>
     <div class="nav_img">
-        <img src="images/logo.webp" alt="logo Auniek Interieur">
+        <a href="index.php"> <img src="images/logo.webp" alt="logo Auniek Interieur"> </a>
     </div>
     <div class="empty"></div>
     <div class="nav_links">
