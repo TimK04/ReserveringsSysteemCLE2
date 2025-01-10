@@ -19,6 +19,7 @@
 <main>
     <section>
         <div>
+            <!-- Aanbeveling om andere foto's te laten maken/gebruiken -->
             <img src="images/potretalyssa.webp" alt="Portret van Alyssa Haaring">
         </div>
         <div>
