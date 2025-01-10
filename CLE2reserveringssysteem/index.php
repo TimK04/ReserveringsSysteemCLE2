@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -24,21 +29,17 @@
                 <div class="werkgrootte" id="nieuwbouw-back">
                     <h3>Nieuwbouw</h3>
                 </div>
-                <div class="button">
-                    <a href="#">Meer lezen</a>
-                </div>
+                <a class="button" href="nieuwbouw.php">Meer lezen</a>
             </article>
             <article>
                 <div class="werkgrootte" id="bestaand-back">
                     <h3>Bestaande bouw</h3>
                 </div>
-                <div class="button">
-                    <a href="#">Meer lezen</a>
-                </div>
+                <a class="button" href="bestaandebouw.php">Meer lezen</a>
             </article>
         </div>
     </section>
-    <section>
+    <section class="review">
         <h2>Reviews</h2>
         <div class="review-container">
             <article class="review-back">

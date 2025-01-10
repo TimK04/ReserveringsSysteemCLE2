@@ -9,7 +9,7 @@
         <a href="portfolio.php">Portfolio</a>
         <a href="reservering.php">Intake</a>
         <a href="bestaandebouw.php">Bestaande bouw</a>
-        <a href="nieuwbouw.php">Nieuw bouw</a>
+        <a href="nieuwbouw.php">Nieuwbouw</a>
         <a href="blog.php">Blog</a>
         <a href="contact.php">Contact</a>
     </div>

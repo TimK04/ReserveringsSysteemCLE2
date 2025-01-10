@@ -5,6 +5,7 @@ h1 {
 h2 {
     font-size: 2.25rem;
     color: var(--textColorBlue);
+    padding: 1vh;
 }
 
 h3 {
@@ -21,10 +22,11 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding: 0 12vw;
 }
 
 header div {
-    height: 35vh;
+    height: 32vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -39,29 +41,41 @@ header div {
 
 main {
     text-align: center;
+    padding: 3vh 12vw;
 }
 
-main article {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+/*main article {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*}*/
 
 .bouw-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10vw;
+    gap: 3vw;
+}
+
+.bouw-container .button {
+    width: 60%;
+    margin: 0 auto;
 }
 
 .bouw-container article {
-    flex: 1;
     display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+.werkgrootte h3 {
+    color: var(--textColorBlue);
 }
 
 .werkgrootte {
-    display: flex;
+    flex: 1;
     justify-content: center;
     align-items: center;
     /*width: 15vw;*/
@@ -75,7 +89,7 @@ main article {
     background-position: center;
     border-radius: 10px;
     text-align: center;
-    padding: 10px;
+    padding: 5vh 0;
     /*margin: 10px;*/
 }
 
@@ -85,12 +99,22 @@ main article {
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 10px;
-    padding: 10px;
-    margin: 10px;
+    text-align: center;
+    padding: 5vh 0;
+    /*margin: 10px;*/
+}
+
+.review {
+    margin-top: 2vh;
+}
+
+.review h3, .review p {
+    color: var(--textColorYellow);
 }
 
 .review-container {
     display: flex;
+    gap: 3vw;
     justify-content: space-evenly;
     align-items: center;
 }
@@ -101,16 +125,20 @@ main article {
 
 .review-back {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 35vw;
-    height: 25vh;
+    /*width: 35vw;*/
+    /*height: 25vh;*/
     text-align: center;
     background-color: #7B6340;
     border-radius: 10px;
+    flex-basis: 0;
+    flex-grow: 1;
+    padding: 10px;
 }
 
-.button a {
+.button {
     color: var(--textColorBrown);
     font-family: "Baskerville Old Face", serif;
     font-size: 1.25rem;

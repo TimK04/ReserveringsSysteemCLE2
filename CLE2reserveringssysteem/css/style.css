@@ -105,16 +105,25 @@ nav {
 
 .dropdown_items a {
     display: block;
-    padding: 10px 20px;
+    /*padding: 10px 20px;*/
+    width: 92px;
     text-decoration: none;
     color: var(--textColorYellow);
 }
 
 .dropdown_items a:hover {
-    padding: 10px 10px 10px 10px;
+    /*padding: 10px 10px 10px 10px;*/
     text-decoration: none;
     background-color: var(--linkNavHover);
     color: var(--textColorYellow);
+}
+
+#person a {
+    padding: 1vw;
+}
+
+#person a:hover {
+    padding: 1vw;
 }
 
 main {
