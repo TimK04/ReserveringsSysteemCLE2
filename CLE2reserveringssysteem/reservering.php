@@ -1,5 +1,12 @@
 <?php
 session_start();
+if ($_SESSION['login'] == true) {
+
+    $firstName = $_SESSION['firstName'];
+    $lastName = $_SESSION['lastName'];
+    $email = $_SESSION['email'];
+}
+
 
 if (isset($_POST['submit'])) {
     /** @var mysqli $db */

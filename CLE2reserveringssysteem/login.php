@@ -46,13 +46,15 @@ if (isset($_POST['submit'])) {
                 $hash = $row;
             }
 
-
         } else {
             $errors['loginFailed'] = 'Login failed';
         }
         if (empty($errors)) {
             if (password_verify($password, $hash['password']) == true) {
-                $_SESSION['Login'] = true;
+                $_SESSION['login'] = true;
+                $_SESSION['firstName'] = $hash['first_name'];
+                $_SESSION['lastName'] = $hash['last_name'];
+                $_SESSION['email'] = $hash['email'];
                 header('location: index.php');
                 exit();
             } else {
