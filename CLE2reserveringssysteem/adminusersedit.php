@@ -14,9 +14,9 @@ $users = [];
 $row = mysqli_fetch_assoc($result);
 $users[] = $row;
 
-$firstName = $row['first_name'];
-$lastName = $row['last_name'];
-$email = $row['email'];
+$firstName = mysqli_escape_string($db, $row['first_name']);
+$lastName = mysqli_escape_string($db, $row['last_name']);
+$email = mysqli_escape_string($db, $row['email']);
 
 if (isset($_POST['submit'])) {
 
