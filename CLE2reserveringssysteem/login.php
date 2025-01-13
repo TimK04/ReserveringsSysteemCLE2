@@ -78,7 +78,7 @@ mysqli_close($db);
 <body>
 <?php include_once 'include/nav.php' ?>
 <header>
-    <h1> Inloggen *bedrijf* </h1>
+    <h1> Inloggen </h1>
 </header>
 <main>
 

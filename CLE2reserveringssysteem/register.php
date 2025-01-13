@@ -82,7 +82,7 @@ mysqli_close($db);
 <?php require_once 'include/nav.php' ?>
 <header>
     <h1>
-        Register
+        Registreer
     </h1>
 </header>
 <main>
@@ -135,7 +135,7 @@ mysqli_close($db);
             <?= $errors['conditions'] ?? '' ?>
         </p>
         <div class="registerStyle">
-            <button class="button" type="submit" name="submit">registreren</button>
+            <button class="button" type="submit" name="submit">Registreren</button>
         </div>
     </form>
 </main>
