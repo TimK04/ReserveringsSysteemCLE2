@@ -188,3 +188,9 @@ footer a {
     padding: 5px;
     height: 50px;
 }
+
+button:hover {
+    color: var(--colorButton);
+    background-color: var(--textColorBrown);
+    transition: 1s;
+}

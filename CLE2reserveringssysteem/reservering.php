@@ -88,7 +88,9 @@ if (isset($_POST['submit'])) {
             ><?= htmlentities($needs ?? '') ?></textarea>
             <p class="error"> <?= $errors['needs'] ?? '' ?> </p>
 
+
             <button class="button" type="submit" name="submit">Inplannen</button>
+
             <div class="succesStyle">
                 <p class="succes"> <?= $succes ?? '' ?> </p>
             </div>
