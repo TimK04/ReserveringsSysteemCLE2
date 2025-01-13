@@ -47,10 +47,10 @@ mysqli_close($db);
             <tbody>
             <?php foreach ($users as $index => $users): ?>
                 <tr>
-                    <th><?= $index + 1; ?></th>
-                    <th><?= $users['first_name']; ?></th>
-                    <th><?= $users['last_name']; ?></th>
-                    <th><?= $users['email']; ?></th>
+                    <th><?= htmlentities($index + 1); ?></th>
+                    <th><?= htmlentities($users['first_name']); ?></th>
+                    <th><?= htmlentities($users['last_name']); ?></th>
+                    <th><?= htmlentities($users['email']); ?></th>
                     <th>
                         <a href="adminusersedit.php?id=<?=$users['id']?>">Klanten Aanpassen</a>
                     </th>
