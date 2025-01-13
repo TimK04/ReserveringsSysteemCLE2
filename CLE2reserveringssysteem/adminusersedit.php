@@ -25,13 +25,13 @@ if (isset($_POST['submit'])) {
     $email = mysqli_escape_string($db, $_POST['email']);
 
     if ($firstName == '') {
-        $errors['firstName'] = "First name is required";
+        $errors['firstName'] = "Voornaam is vereist";
     };
     if ($lastName == '') {
-        $errors['lastName'] = "Last name is required";
+        $errors['lastName'] = "Achternaam is vereist";
     };
     if ($email == '') {
-        $errors['email'] = "Email is required";
+        $errors['email'] = "Email is vereist";
     };
 
     if (empty($errors)) {

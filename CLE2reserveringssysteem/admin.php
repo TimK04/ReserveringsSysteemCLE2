@@ -88,13 +88,13 @@ mysqli_close($db);
             <tbody>
             <?php foreach ($reservations as $index => $reservations): ?>
                 <tr>
-                    <th><?= $index + 1; ?></th>
-                    <th><?= $reservations['first_name']; ?></th>
-                    <th><?= $reservations['last_name']; ?></th>
-                    <th><?= $reservations['email']; ?></th>
-                    <th><?= $reservations['time']; ?></th>
-                    <th><?= $reservations['date']; ?></th>
-                    <th><?= $reservations['text']; ?></th>
+                    <th><?= htmlentities($index + 1); ?></th>
+                    <th><?= htmlentities($reservations['first_name']); ?></th>
+                    <th><?= htmlentities($reservations['last_name']); ?></th>
+                    <th><?= htmlentities($reservations['email']); ?></th>
+                    <th><?= htmlentities($reservations['time']); ?></th>
+                    <th><?= htmlentities($reservations['date']); ?></th>
+                    <th><?= htmlentities($reservations['text']); ?></th>
                 </tr>
             <?php endforeach; ?>
             </tbody>

@@ -31,22 +31,22 @@ if (isset($_POST['submit'])) {
     $text = mysqli_escape_string($db, $_POST['text']);
 
     if ($firstName == '') {
-        $errors['firstName'] = "First name is required";
+        $errors['firstName'] = "Voornaam is vereist";
     };
     if ($lastName == '') {
-        $errors['lastName'] = "Last name is required";
+        $errors['lastName'] = "Achternaam is vereist";
     };
     if ($email == '') {
-        $errors['email'] = "Email is required";
+        $errors['email'] = "Email is vereist";
     };
     if ($time == '') {
-        $errors['time'] = "Time is required";
+        $errors['time'] = "Tijd is vereist";
     };
     if ($date == '') {
-        $errors['date'] = "Date is required";
+        $errors['date'] = "Datum is vereist";
     };
     if ($text == '') {
-        $errors['text'] = "Text is required";
+        $errors['text'] = "Text is vereist";
     };
     if (empty($errors)) {
 
