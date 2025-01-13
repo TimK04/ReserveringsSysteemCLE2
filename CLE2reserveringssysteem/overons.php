@@ -12,9 +12,15 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/media.css">
     <title>Over Auniek Interieurs</title>
 </head>
 <body>
+<?php if ($t < "20") {
+    echo "Have a good day!";
+} else {
+    echo "Have a good night!";
+} ?>
 <?php require_once 'include/nav.php' ?>
 <header>
     <div>
@@ -25,10 +31,10 @@ session_start();
     <section>
         <div>
             <!-- Aanbeveling om andere foto's te laten maken/gebruiken -->
-            <img src="images/potretalyssa.webp" alt="Portret van Alyssa Haaring">
+            <img src="images/potretalyssa.webp" alt="Portret van Alyssa Haaring" class="img_about">
         </div>
         <div>
-            <p>
+            <p class="about_par">
                 Mijn naam is Alyssa Haaring. Vanaf kleins af aan wist ik al wat ik wilde worden, namelijk
                 interieuradviseur.
                 Hierbij wist ik vanaf mijn negende al dat ik naar het Hout- en Meubileringscollege in Rotterdam wilde.

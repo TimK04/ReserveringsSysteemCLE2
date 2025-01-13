@@ -31,14 +31,14 @@ main div {
     margin: 5px;
 }
 
-main div img {
+.img_about {
     width: 20vw;
     border-radius: 15px;
     margin: 5px;
     box-shadow: 2px 2px 5px 5px #DADFE2;
 }
 
-main div p {
+.about_par {
     width: 30vw;
     padding: 5px;
     margin: 5px;
