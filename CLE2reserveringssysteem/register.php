@@ -7,19 +7,24 @@ $login = false;
 
 if (isset($_POST['submit'])) {
 
-
     $firstName = mysqli_escape_string($db, $_POST['firstName']);
     $lastName = mysqli_escape_string($db, $_POST['lastName']);
     $email = mysqli_escape_string($db, $_POST['email']);
     $password = mysqli_escape_string($db, $_POST['password']);
     $dubblePassword = mysqli_escape_string($db, $_POST['passwordCheck']);
 
-
+    $errors = [];
+    if (strlen($firstName) > 50) {
+        $errors['firstName'] = 'Uw voornaam mag niet meer dan 50 letters';
+    }
     if ($firstName == '') {
         $errors['firstName'] = 'Uw voornaam is verplicht';
     }
     if ($lastName == '') {
         $errors['lastName'] = 'Uw achternaam is verplicht';
+    }
+    if (strlen($lastName) > 50) {
+        $errors['lastName'] = 'Uw achternaam mag niet meer dan 50 letters';
     }
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $errors['email'] = 'Dit email bestaat niet';
@@ -40,9 +45,7 @@ if (isset($_POST['submit'])) {
         $errors['conditions'] = 'U moet de voorwaardes accepteren!! ';
     }
 
-    $sql = " 
-SELECT `email`  FROM users WHERE `email` = '$email'
-";
+    $sql = " SELECT `email`  FROM users WHERE `email` = '$email'";
     $result = mysqli_query($db, $sql)
     or die('Error ' . mysqli_error($db) . 'with query ' . $sql);
     if (mysqli_num_rows($result) > 0) {
@@ -53,8 +56,8 @@ SELECT `email`  FROM users WHERE `email` = '$email'
         $password = password_hash($password, PASSWORD_DEFAULT);
 
         $query = "
-    INSERT INTO `users`(`first_name`, `last_name`, `email`, `password`)
-    VALUES ('$firstName','$lastName','$email', '$password')
+    INSERT INTO `users`(`first_name`, `last_name`, `email`, `password`, `admin_id`)
+    VALUES ('$firstName','$lastName','$email', '$password', 0)
     ";
         $result = mysqli_query($db, $query)
         or die('Error ' . mysqli_error($db) . 'with query ' . $query);
@@ -92,14 +95,14 @@ mysqli_close($db);
         </div>
         <input id="firstName" type="text" name="firstName" value="<?= htmlentities($firstName ?? '') ?>">
         <p class="error">
-            <?= $errors['lastName'] ?? '' ?>
+            <?= $errors['firstName'] ?? '' ?>
         </p>
         <div class="container">
             <label for="lastName">Achternaam</label>
         </div>
         <input id="lastName" type="text" name="lastName" value="<?= htmlentities($lastName ?? '') ?>">
         <p class="error">
-            <?= $errors['firstName'] ?? '' ?>
+            <?= $errors['lastName'] ?? '' ?>
         </p>
         <div class="container">
             <label for="email">E-mail</label>
