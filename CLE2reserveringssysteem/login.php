@@ -53,6 +53,7 @@ if (isset($_POST['submit'])) {
                 $_SESSION['firstName'] = $hash['first_name'];
                 $_SESSION['lastName'] = $hash['last_name'];
                 $_SESSION['email'] = $hash['email'];
+                $_SESSION['admin_id'] = $hash['admin_id'];
 
                 header('location: index.php');
                 exit();

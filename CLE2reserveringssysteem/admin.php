@@ -2,6 +2,10 @@
 /** @var mysqli $db */
 require_once "include/database.php";
 session_start();
+if ($_SESSION['admin_id'] == 0) {
+    header('location: index.php');
+    exit;
+}
 $query = "SELECT * FROM reservations";
 
 $result = mysqli_query($db, $query)

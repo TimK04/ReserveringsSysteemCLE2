@@ -3,6 +3,10 @@
 require_once "include/database.php";
 session_start();
 $id = $_GET['id'];
+if ($_SESSION['admin_id'] == 0) {
+    header('location: index.php');
+    exit;
+}
 
 $query = "SELECT * FROM users WHERE id = $id";
 
@@ -17,12 +21,14 @@ $users[] = $row;
 $firstName = mysqli_escape_string($db, $row['first_name']);
 $lastName = mysqli_escape_string($db, $row['last_name']);
 $email = mysqli_escape_string($db, $row['email']);
+$adminId = $row['admin_id'];
 
 if (isset($_POST['submit'])) {
 
     $firstName = mysqli_escape_string($db, $_POST['firstName']);
     $lastName = mysqli_escape_string($db, $_POST['lastName']);
     $email = mysqli_escape_string($db, $_POST['email']);
+    $checkBox = $_POST['checkBox'] ?? ' ';
 
     if ($firstName == '') {
         $errors['firstName'] = "Voornaam is vereist";
@@ -33,12 +39,15 @@ if (isset($_POST['submit'])) {
     if ($email == '') {
         $errors['email'] = "Email is vereist";
     };
+    if ($checkBox == 'on') {
+        $adminId = 1;
+    }
 
     if (empty($errors)) {
 
         $query = " 
         UPDATE users
-        SET first_name = '$firstName', last_name = '$lastName', email = '$email' 
+        SET first_name = '$firstName', last_name = '$lastName', email = '$email', admin_id = $adminId 
         WHERE id = $id
         ";
 
@@ -82,8 +91,8 @@ if (isset($_POST['submit'])) {
 
         <p><?= $errors['email'] ?? '' ?></p>
 
-        <label for="admin_id">admin</label>
-        <input type="checkbox" id="admin_id" name="admin_id">
+        <label for="checkBox">admin</label>
+        <input type="checkbox" id="checkBox" name="checkBox" <?php if ($adminId == 1) { ?> checked <?php } ?> >
 
         <button class="button" type="submit" name="submit">aanpassen</button>
     </form>

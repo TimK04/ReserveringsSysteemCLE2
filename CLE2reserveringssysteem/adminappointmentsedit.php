@@ -2,6 +2,10 @@
 /** @var mysqli $db */
 require_once "include/database.php";
 session_start();
+if ($_SESSION['admin_id'] == 0) {
+    header('location: index.php');
+    exit;
+}
 $id = $_GET['id'];
 
 $query = "SELECT * FROM reservations WHERE id = $id";
