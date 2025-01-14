@@ -1,6 +1,6 @@
 <nav>
     <div class="nav_img">
-        <a href="index.php"> <img src="images/logo.webp" alt="logo Auniek Interieur"> </a>
+        <a href="index.php"> <img src="images/logo.png" alt="logo Auniek Interieur"> </a>
     </div>
     <div class="empty"></div>
     <div class="nav_links">
@@ -9,7 +9,7 @@
         <a href="portfolio.php">Portfolio</a>
         <a href="reservering.php">Intake</a>
         <div class="dropdown">
-            <button class="nav_link" href="#">Werkwijzen</button>
+            <button class="nav_links" id="werkwijzen" href="#">Werkwijzen</button>
             <div class="dropdown_items">
                 <a href="bestaandebouw.php">Bestaande bouw</a>
                 <a href="nieuwbouw.php">Nieuwbouw</a>
@@ -19,7 +19,7 @@
         <a href="contact.php">Contact</a>
     </div>
     <div class="dropdown">
-        <a href=""><img class="logo" src="images/inlog.webp" alt="Profiel"></a>
+        <a href=""><img class="logo" src="images/inlog.png" alt="Profiel"></a>
         <div class="dropdown_items" id="person">
             <a href="profile.php">Profiel</a>
             <?php if (isset($_SESSION['Login'])) { ?>
