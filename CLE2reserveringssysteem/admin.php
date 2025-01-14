@@ -67,9 +67,9 @@ mysqli_close($db);
             <?php foreach ($users as $index => $users): ?>
                 <tr>
                     <th><?= htmlentities($index + 1) ?? ''; ?></th>
-                    <th><?= htmlentities($users['first_name']) ?? ''; ?></th>
-                    <th><?= htmlentities($users['last_name']) ?? ''; ?></th>
-                    <th><?= htmlentities($users['email']) ?? ''; ?></th>
+                    <th><?= htmlentities($users['first_name'] ?? ''); ?></th>
+                    <th><?= htmlentities($users['last_name'] ?? ''); ?></th>
+                    <th><?= htmlentities($users['email'] ?? ''); ?></th>
                 </tr>
             <?php endforeach; ?>
             </tbody>
@@ -93,12 +93,12 @@ mysqli_close($db);
             <?php foreach ($reservations as $index => $reservations): ?>
                 <tr>
                     <th><?= htmlentities($index + 1); ?></th>
-                    <th><?= htmlentities($reservations['first_name']) ?? ''; ?></th>
-                    <th><?= htmlentities($reservations['last_name']) ?? ''; ?></th>
-                    <th><?= htmlentities($reservations['email']) ?? ''; ?></th>
-                    <th><?= htmlentities($reservations['time']) ?? ''; ?></th>
-                    <th><?= htmlentities($reservations['date']) ?? ''; ?></th>
-                    <th><?= htmlentities($reservations['text']) ?? ''; ?></th>
+                    <th><?= htmlentities($reservations['first_name'] ?? ''); ?></th>
+                    <th><?= htmlentities($reservations['last_name'] ?? ''); ?></th>
+                    <th><?= htmlentities($reservations['email'] ?? ''); ?></th>
+                    <th><?= htmlentities($reservations['time'] ?? ''); ?></th>
+                    <th><?= htmlentities($reservations['date'] ?? ''); ?></th>
+                    <th><?= htmlentities($reservations['text'] ?? ''); ?></th>
                 </tr>
             <?php endforeach; ?>
             </tbody>
