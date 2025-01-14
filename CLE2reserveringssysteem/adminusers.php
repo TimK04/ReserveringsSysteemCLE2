@@ -2,7 +2,7 @@
 /** @var mysqli $db */
 require_once "include/database.php";
 session_start();
-if ($_SESSION['admin_id'] == 0) {
+if ($_SESSION['admin_id'] !== 1) {
     header('location: index.php');
     exit;
 }
