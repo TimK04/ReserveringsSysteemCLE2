@@ -1,7 +1,7 @@
 <?php
 /** @var mysqli $db */
 require_once "include/database.php";
-
+session_start();
 $id = $_GET['id'];
 
 $query = "SELECT * FROM users WHERE id = $id";
@@ -68,7 +68,7 @@ if (isset($_POST['submit'])) {
 <main>
     <form action="" method="Post">
         <label for="firstName">Voornaam</label>
-        <input type="text" id="firstName" name="firstName" value="<?= htmlentities($firstName) ?? ''?>">
+        <input type="text" id="firstName" name="firstName" value="<?= htmlentities($firstName) ?? '' ?>">
 
         <p><?= $errors['firstName'] ?? '' ?></p>
 
@@ -82,7 +82,10 @@ if (isset($_POST['submit'])) {
 
         <p><?= $errors['email'] ?? '' ?></p>
 
-        <input type="submit" name="submit" value="Aanpassen">
+        <label for="admin_id">admin</label>
+        <input type="checkbox" id="admin_id" name="admin_id">
+
+        <button class="button" type="submit" name="submit">aanpassen</button>
     </form>
     <a href="adminusers.php">Ga Terug</a>
 </main>

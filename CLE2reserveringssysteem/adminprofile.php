@@ -1,7 +1,9 @@
 <?php
 /** @var mysqli $db */
 require_once "include/database.php";
+session_start();
 ?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -18,7 +20,7 @@ require_once "include/database.php";
     <h1>Admin Profiel</h1>
 </header>
 <main>
-    <a  href="admin.php">Admin Homepagina</a>
+    <a href="admin.php">Admin Homepagina</a>
 </main>
 <?php require_once 'include/footer.php' ?>
 </body>

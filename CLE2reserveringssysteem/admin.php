@@ -1,7 +1,7 @@
 <?php
 /** @var mysqli $db */
 require_once "include/database.php";
-
+session_start();
 $query = "SELECT * FROM reservations";
 
 $result = mysqli_query($db, $query)

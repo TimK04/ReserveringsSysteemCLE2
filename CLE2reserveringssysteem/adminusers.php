@@ -1,7 +1,7 @@
 <?php
 /** @var mysqli $db */
 require_once "include/database.php";
-
+session_start();
 $query = "SELECT * FROM users";
 
 $result = mysqli_query($db, $query)
@@ -32,7 +32,7 @@ mysqli_close($db);
 </header>
 <main>
 
-    <a  href="admin.php">Admin Homepagina</a>
+    <a href="admin.php">Admin Homepagina</a>
 
     <section>
         <table>
@@ -52,7 +52,7 @@ mysqli_close($db);
                     <th><?= htmlentities($users['last_name']); ?></th>
                     <th><?= htmlentities($users['email']); ?></th>
                     <th>
-                        <a href="adminusersedit.php?id=<?=$users['id']?>">Klanten Aanpassen</a>
+                        <a href="adminusersedit.php?id=<?= $users['id'] ?>">Klanten Aanpassen</a>
                     </th>
                 </tr>
             <?php endforeach; ?>

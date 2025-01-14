@@ -1,7 +1,7 @@
 <?php
 /** @var mysqli $db */
 require_once "include/database.php";
-
+session_start();
 $id = $_GET['id'];
 
 $query = "SELECT * FROM reservations WHERE id = $id";
@@ -82,7 +82,7 @@ if (isset($_POST['submit'])) {
 <main>
     <form action="" method="Post">
         <label for="firstName">Voornaam</label>
-        <input type="text" id="firstName" name="firstName" value="<?= htmlentities($firstName) ?? ''?>">
+        <input type="text" id="firstName" name="firstName" value="<?= htmlentities($firstName) ?? '' ?>">
 
         <p><?= $errors['firstName'] ?? '' ?></p>
 

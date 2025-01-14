@@ -1,7 +1,7 @@
 <?php
 /** @var mysqli $db */
 require_once "include/database.php";
-
+session_start();
 $query = "SELECT * FROM reservations";
 
 $result = mysqli_query($db, $query)
@@ -32,7 +32,7 @@ mysqli_close($db);
 </header>
 <main>
 
-    <a  href="admin.php">Admin Home</a>
+    <a href="admin.php">Admin Home</a>
 
     <section>
         <table>
@@ -58,7 +58,8 @@ mysqli_close($db);
                     <th><?= htmlentities($reservations['date']) ?? ''; ?></th>
                     <th><?= htmlentities($reservations['text']) ?? ''; ?></th>
                     <th>
-                        <a href="adminappointmentsedit.php?id= <?=$reservations['id']?>" href="">Reserveringen Aanpassen</a>
+                        <a href="adminappointmentsedit.php?id= <?= $reservations['id'] ?>" href="">Reserveringen
+                            Aanpassen</a>
                     </th>
                 </tr>
             <?php endforeach; ?>
