@@ -39,6 +39,7 @@ mysqli_close($db);
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Admin Homepagina</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
 <?php require_once 'include/nav.php' ?>
@@ -46,12 +47,11 @@ mysqli_close($db);
     <h1>Admin Pagina</h1>
 </header>
 <main>
-    <p>Profiel</p>
-    <a href="adminprofile.php">Profiel</a>
-    <p>Afspraken</p>
-    <a href="adminappointments.php">Afspraken</a>
-    <p>Klanten</p>
-    <a href="adminusers.php">Klanten</a>
+    <section class="adminlinks">
+        <a href="adminprofile.php">Profiel</a>
+        <a href="adminappointments.php">Afspraken</a>
+        <a href="adminusers.php">Klanten</a>
+    </section>
 
     <section>
         <table>
