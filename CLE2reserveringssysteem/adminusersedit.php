@@ -29,7 +29,7 @@ if (isset($_POST['submit'])) {
     $lastName = mysqli_escape_string($db, $_POST['lastName']);
     $email = mysqli_escape_string($db, $_POST['email']);
     $checkBox = $_POST['checkBox'] ?? ' ';
-
+    $adminId = 0;
     if ($firstName == '') {
         $errors['firstName'] = "Voornaam is vereist";
     };
@@ -42,7 +42,7 @@ if (isset($_POST['submit'])) {
     if ($checkBox == 'on') {
         $adminId = 1;
     }
-
+    
     if (empty($errors)) {
 
         $query = " 
