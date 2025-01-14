@@ -79,7 +79,7 @@ mysqli_close($db);
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/user.css">
-    <title>Registreren</title>
+    <title>Auniek Interieur - Registreren</title>
 </head>
 <body>
 <?php require_once 'include/nav.php' ?>
