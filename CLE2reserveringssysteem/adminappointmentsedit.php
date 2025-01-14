@@ -96,22 +96,22 @@ if (isset($_POST['submit'])) {
         <p><?= $errors['lastName'] ?? '' ?></p>
 
         <label for="email">Email</label>
-        <input type="text" id="email" name="email" value="<?= htmlentities($email) ?? '' ?>">
+        <input type="text" id="email" name="email" value="<?= htmlentities($email ?? '') ?>">
 
         <p><?= $errors['email'] ?? '' ?></p>
 
         <label for="time">Tijd</label>
-        <input type="time" id="time" name="time" value="<?= htmlentities($time) ?? '' ?>">
+        <input type="time" id="time" name="time" value="<?= htmlentities($time ?? '') ?>">
 
         <p><?= $errors['time'] ?? '' ?></p>
 
         <label for="date">Datum</label>
-        <input type="date" id="date" name="date" value="<?= htmlentities($date) ?? '' ?>">
+        <input type="date" id="date" name="date" value="<?= htmlentities($date ?? '') ?>">
 
         <p><?= $errors['date'] ?? '' ?></p>
 
         <label for="text">Text</label>
-        <input type="text" id="text" name="text" value="<?= htmlentities($text) ?? '' ?>">
+        <input type="text" id="text" name="text" value="<?= htmlentities($text ?? '') ?>">
 
         <p><?= $errors['text'] ?? '' ?></p>
 

@@ -52,9 +52,9 @@ mysqli_close($db);
             <?php foreach ($users as $index => $users): ?>
                 <tr>
                     <th><?= htmlentities($index + 1); ?></th>
-                    <th><?= htmlentities($users['first_name']); ?></th>
-                    <th><?= htmlentities($users['last_name']); ?></th>
-                    <th><?= htmlentities($users['email']); ?></th>
+                    <th><?= htmlentities($users['first_name'] ?? ''); ?></th>
+                    <th><?= htmlentities($users['last_name'] ?? ''); ?></th>
+                    <th><?= htmlentities($users['email'] ?? ''); ?></th>
                     <th>
                         <a href="adminusersedit.php?id=<?= $users['id'] ?>">Klanten Aanpassen</a>
                     </th>

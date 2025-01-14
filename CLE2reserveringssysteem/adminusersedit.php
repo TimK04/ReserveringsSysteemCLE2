@@ -77,17 +77,17 @@ if (isset($_POST['submit'])) {
 <main>
     <form action="" method="Post">
         <label for="firstName">Voornaam</label>
-        <input type="text" id="firstName" name="firstName" value="<?= htmlentities($firstName) ?? '' ?>">
+        <input type="text" id="firstName" name="firstName" value="<?= htmlentities($firstName ?? '') ?>">
 
         <p><?= $errors['firstName'] ?? '' ?></p>
 
         <label for="lastName">Achternaam</label>
-        <input type="text" id="lastName" name="lastName" value="<?= htmlentities($lastName) ?? '' ?>">
+        <input type="text" id="lastName" name="lastName" value="<?= htmlentities($lastName ?? '') ?>">
 
         <p><?= $errors['lastName'] ?? '' ?></p>
 
         <label for="email">Email</label>
-        <input type="text" id="email" name="email" value="<?= htmlentities($email) ?? '' ?>">
+        <input type="text" id="email" name="email" value="<?= htmlentities($email ?? '') ?>">
 
         <p><?= $errors['email'] ?? '' ?></p>
 
