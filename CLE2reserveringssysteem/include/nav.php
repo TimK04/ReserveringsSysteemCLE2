@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <nav>
     <div class="nav_img">
         <a href="index.php"> <img src="images/logo.png" alt="logo Auniek Interieur"> </a>
