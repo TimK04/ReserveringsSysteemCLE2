@@ -17,6 +17,7 @@ if ($_SESSION['admin_id'] != 1) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Admin Profiel</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
 <?php require_once 'include/nav.php' ?>
