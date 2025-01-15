@@ -28,6 +28,7 @@ mysqli_close($db);
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Admin Klanten</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
 <?php require_once 'include/nav.php' ?>
@@ -35,10 +36,7 @@ mysqli_close($db);
     <h1>Admin Klanten</h1>
 </header>
 <main>
-
-    <a href="admin.php">Admin Homepagina</a>
-
-    <section>
+    <section class="admin">
         <table>
             <thead>
             <tr>
@@ -63,6 +61,8 @@ mysqli_close($db);
             </tbody>
         </table>
     </section>
+
+    <a href="admin.php">Admin Homepagina</a>
 
 </main>
 <?php require_once 'include/footer.php' ?>
