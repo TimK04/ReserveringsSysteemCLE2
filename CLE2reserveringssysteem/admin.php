@@ -46,14 +46,9 @@ mysqli_close($db);
 <header>
     <h1>Admin Pagina</h1>
 </header>
-<main>
-    <section class="adminlinks">
-        <a href="adminprofile.php">Profiel</a>
-        <a href="adminappointments.php">Afspraken</a>
-        <a href="adminusers.php">Klanten</a>
-    </section>
-
-    <section>
+<main class="adminmain">
+   <section class="adminspacebetween">
+    <section class="tim">
         <table>
             <thead>
             <tr>
@@ -76,7 +71,7 @@ mysqli_close($db);
         </table>
     </section>
 
-    <section>
+    <section class="tim">
         <table>
             <thead>
             <tr>
@@ -103,6 +98,16 @@ mysqli_close($db);
             <?php endforeach; ?>
             </tbody>
         </table>
+    </section>
+       <section class="tim">
+             <!--Blog section-->
+       </section>
+   </section>
+
+    <section class="adminspacebetween">
+        <a href="adminusers.php">Klanten</a>
+        <a href="adminappointments.php">Afspraken</a>
+        <a href="adminprofile.php">Profiel</a>
     </section>
 
 </main>

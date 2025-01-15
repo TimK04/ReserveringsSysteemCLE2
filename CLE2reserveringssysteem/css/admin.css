@@ -1,0 +1,21 @@
+.adminspacebetween {
+    display: flex;
+    justify-content: space-between;
+}
+
+.admincenter {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.admin {
+    background-color: #7B6340;
+}
+
+.tim {
+    background-color: #7B6340;
+    width: 25vw;
+    font-size: 0.65vw;
+}
+
