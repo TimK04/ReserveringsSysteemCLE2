@@ -99,7 +99,9 @@ if (isset($_POST['submit'])) {
 
         <button class="button" type="submit" name="submit">aanpassen</button>
     </form>
+    <div class="adminlinks admincenter">
     <a href="adminusers.php">Ga Terug</a>
+    </div>
 </main>
 <div id="contentfooter">
 </div>

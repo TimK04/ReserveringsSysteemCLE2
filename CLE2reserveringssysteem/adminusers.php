@@ -38,7 +38,7 @@ mysqli_close($db);
     <h1 class="admincenter">Admin Klanten</h1>
 </header>
 <main>
-    <section class="admin">
+    <section class="tim admincenter">
         <table>
             <thead>
             <tr>
@@ -63,9 +63,9 @@ mysqli_close($db);
             </tbody>
         </table>
     </section>
-
-    <a href="admin.php">Admin Homepagina</a>
-
+    <div class="adminlinks admincenter">
+    <a href="admin.php" >Admin Homepagina</a>
+    </div>
 </main>
 <div id="contentfooter">
 </div>

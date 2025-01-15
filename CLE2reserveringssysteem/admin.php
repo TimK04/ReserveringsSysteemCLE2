@@ -49,8 +49,8 @@ mysqli_close($db);
     <h1 class="admincenter">Admin Pagina</h1>
 </header>
 <main class="adminmain">
-    <section class="adminspacebetween">
-        <section class="tim">
+    <section class="admininfo">
+        <section class="tim admincenter">
             <table>
                 <thead>
                 <tr>
@@ -72,8 +72,10 @@ mysqli_close($db);
                 </tbody>
             </table>
         </section>
-
-        <section class="tim">
+        <div class="adminlinks admincenter">
+            <a href="adminusers.php">Klanten</a>
+        </div>
+        <section class="tim admincenter">
             <table>
                 <thead>
                 <tr>
@@ -101,15 +103,15 @@ mysqli_close($db);
                 </tbody>
             </table>
         </section>
-        <section class="tim">
+        <div class="adminlinks admincenter">
+            <a href="adminappointments.php">Afspraken</a>
+        </div>
+        <section class="tim admincenter">
             <!--Blog section-->
         </section>
-    </section>
-
-    <section class="adminspacebetween adminlinks">
-        <a href="adminusers.php">Klanten</a>
-        <a href="adminappointments.php">Afspraken</a>
-        <a href="adminprofile.php">Profiel</a>
+        <div class="adminlinks admincenter">
+            <a href="adminprofile.php">Profiel</a>
+        </div>
     </section>
 
 </main>

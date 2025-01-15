@@ -9,25 +9,29 @@
     text-align: center;
 }
 
-.admin {
-    background-color: #7B6340;
-}
-
 .tim {
     background-color: #7B6340;
-    width: 25vw;
-    font-size: 0.65vw;
+    height: 17vw;
+    margin-bottom: 2vw;
+    margin-top: 2vw;
+    border-radius: 7px;
 }
 
 .adminlinks a {
     text-decoration: none;
     background-color: #EEE3B4;
     color: #7B6340;
+    font-family: "Baskerville Old Face", serif;
+    font-size: 1.25rem;
+    padding: 5px;
+    border-radius: 7px;
+    border: none;
 }
 
 .adminlinks a:hover {
     text-decoration: none;
     background-color: #7B6340;
     color: #EEE3B4;
+    transition: 500ms;
 }
 

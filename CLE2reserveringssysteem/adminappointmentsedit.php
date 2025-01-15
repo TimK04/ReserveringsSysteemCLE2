@@ -120,7 +120,9 @@ if (isset($_POST['submit'])) {
 
         <input type="submit" name="submit" value="Aanpassen">
     </form>
+    <div class="adminlinks admincentern">
     <a href="adminappointments.php">Ga Terug</a>
+    </div>
 </main>
 <div id="contentfooter">
 </div>

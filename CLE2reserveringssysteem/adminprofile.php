@@ -27,7 +27,9 @@ if ($_SESSION['admin_id'] != 1) {
     <h1 class="admincenter">Admin Profiel</h1>
 </header>
 <main>
+    <div class="adminlinks admincenter">
     <a href="admin.php">Admin Homepagina</a>
+    </div>
 </main>
 <div id="contentfooter">
 </div>
