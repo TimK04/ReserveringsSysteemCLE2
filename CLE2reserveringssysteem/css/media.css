@@ -1,0 +1,82 @@
+@media screen and (max-width: 480px) {
+    html {
+        font-size: 12px;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        font-family: "Baskerville Old Face", serif;
+    }
+
+    nav {
+        padding: 0;
+        margin: 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    a {
+        flex-direction: column;
+    }
+
+    main {
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    footer {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 100%;
+    }
+
+    .background {
+        max-width: 100%;
+    }
+
+    .topnav {
+        overflow: hidden;
+        background-color: #367283;
+        position: relative;
+    }
+
+    .topnav a {
+        color: white;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        display: block;
+    }
+
+    .topnav a.icon {
+        background: black;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .topnav a:hover {
+        background-color: #367283;
+        color: black;
+    }
+
+    .active {
+        background-color: #367283;
+        color: white;
+    }
+
+    .topnav #nav_links {
+        display: none;
+    }
+}
