@@ -84,6 +84,32 @@ nav {
     color: var(--textColorYellow);
 }
 
+.admin a {
+    padding: 5px 15px 5px 15px;
+    text-decoration: none;
+    color: var(--textColorYellow);
+}
+
+.admin {
+    margin-right: 4vw;
+}
+
+.admin a:hover {
+    padding: 5px 15px 5px 15px;
+    text-decoration: none;
+    background-color: var(--linkNavHover);
+    color: var(--textColorYellow);
+}
+
+.admin_empty {
+    flex: 3;
+}
+
+.admin p {
+    color: var(--textColorYellow);
+    min-width: 100px;
+}
+
 .logo {
     width: 45px;
     margin: 1vw 5px;

@@ -4,7 +4,6 @@ session_start();
 require_once 'include/database.php';
 
 if (isset($_SESSION['Login'])) {
-
     $firstName = mysqli_escape_string($db, $_SESSION['firstName']);
     $lastName = mysqli_escape_string($db, $_SESSION['lastName']);
     $email = mysqli_escape_string($db, $_SESSION['email']);
@@ -58,6 +57,9 @@ if (isset($_POST['submit'])) {
 </head>
 <body>
 <?php require_once 'include/nav.php' ?>
+<?php if (isset($_SESSION['admin_id']) && $_SESSION['admin_id'] == 1) {
+    require_once 'include/adminnav.php';
+} ?>
 <header>
     <h1>Intake gesprek inplannen:</h1>
     <p class="important">15 min intake gesprek</p>
