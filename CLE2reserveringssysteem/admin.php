@@ -50,31 +50,7 @@ mysqli_close($db);
 </header>
 <main class="adminmain">
     <section class="admininfo">
-        <section class="tim admincenter">
-            <table>
-                <thead>
-                <tr>
-                    <th>Positie</th>
-                    <th>Voornaam</th>
-                    <th>Achternaam</th>
-                    <th>Email</th>
-                </tr>
-                </thead>
-                <tbody>
-                <?php foreach ($users as $index => $users): ?>
-                    <tr>
-                        <th><?= htmlentities($index + 1) ?? ''; ?></th>
-                        <th><?= htmlentities($users['first_name'] ?? ''); ?></th>
-                        <th><?= htmlentities($users['last_name'] ?? ''); ?></th>
-                        <th><?= htmlentities($users['email'] ?? ''); ?></th>
-                    </tr>
-                <?php endforeach; ?>
-                </tbody>
-            </table>
-        </section>
-        <div class="adminlinks admincenter">
-            <a href="adminusers.php">Klanten</a>
-        </div>
+        <h2 class="admincenter">Afspraken</h2>
         <section class="tim admincenter">
             <table>
                 <thead>
@@ -106,6 +82,33 @@ mysqli_close($db);
         <div class="adminlinks admincenter">
             <a href="adminappointments.php">Afspraken</a>
         </div>
+        <h2 class="admincenter">Klanten</h2>
+        <section class="tim admincenter">
+            <table>
+                <thead>
+                <tr>
+                    <th>Positie</th>
+                    <th>Voornaam</th>
+                    <th>Achternaam</th>
+                    <th>Email</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php foreach ($users as $index => $users): ?>
+                    <tr>
+                        <th><?= htmlentities($index + 1) ?? ''; ?></th>
+                        <th><?= htmlentities($users['first_name'] ?? ''); ?></th>
+                        <th><?= htmlentities($users['last_name'] ?? ''); ?></th>
+                        <th><?= htmlentities($users['email'] ?? ''); ?></th>
+                    </tr>
+                <?php endforeach; ?>
+                </tbody>
+            </table>
+        </section>
+        <div class="adminlinks admincenter">
+            <a href="adminusers.php">Klanten</a>
+        </div>
+        <h2 class="admincenter">Blog</h2>
         <section class="tim admincenter">
             <!--Blog section-->
         </section>

@@ -11,10 +11,10 @@
 
 .tim {
     background-color: #7B6340;
+    color: #EEE3B4;
     height: 17vw;
-    margin-bottom: 2vw;
-    margin-top: 2vw;
     border-radius: 7px;
+    margin-bottom: 2vw;
 }
 
 .adminlinks a {
@@ -33,5 +33,9 @@
     background-color: #7B6340;
     color: #EEE3B4;
     transition: 500ms;
+}
+h2 {
+    color: #367283;
+    margin: 2vw;
 }
 

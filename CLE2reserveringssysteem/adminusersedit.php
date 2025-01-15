@@ -18,9 +18,9 @@ $users = [];
 $row = mysqli_fetch_assoc($result);
 $users[] = $row;
 
-$firstName = mysqli_escape_string($db, $row['first_name']);
-$lastName = mysqli_escape_string($db, $row['last_name']);
-$email = mysqli_escape_string($db, $row['email']);
+$firstName = mysqli_escape_string($db, $row['first_name']?? '');
+$lastName = mysqli_escape_string($db, $row['last_name']?? '');
+$email = mysqli_escape_string($db, $row['email']?? '');
 $adminId = $row['admin_id'];
 
 if (isset($_POST['submit'])) {

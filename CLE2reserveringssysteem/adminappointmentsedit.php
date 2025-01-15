@@ -18,12 +18,12 @@ $reservations = [];
 $row = mysqli_fetch_assoc($result);
 $reservations[] = $row;
 
-$firstName = mysqli_escape_string($db, $row['first_name']);
-$lastName = mysqli_escape_string($db, $row['last_name']);
-$email = mysqli_escape_string($db, $row['email']);
-$time = mysqli_escape_string($db, $row['time']);
-$date = mysqli_escape_string($db, $row['date']);
-$text = mysqli_escape_string($db, $row['text']);
+$firstName = mysqli_escape_string($db, $row['first_name']?? '');
+$lastName = mysqli_escape_string($db, $row['last_name']?? '');
+$email = mysqli_escape_string($db, $row['email']?? '');
+$time = mysqli_escape_string($db, $row['time']?? '');
+$date = mysqli_escape_string($db, $row['date']?? '');
+$text = mysqli_escape_string($db, $row['text']??'');
 
 if (isset($_POST['submit'])) {
 
