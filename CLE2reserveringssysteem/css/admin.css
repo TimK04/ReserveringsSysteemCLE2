@@ -38,4 +38,28 @@ h2 {
     color: #367283;
     margin: 2vw;
 }
+.flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.flex .tim {
+    width: 37vw;
+}
+.flexlinks {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 15vw;
+    margin-right: 15vw;
+    margin-bottom: 2vw;
+}
+.flexheaders {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.flexheaders h2 {
+    margin-left: 15vw;
+    margin-right: 15vw;
+}
 

@@ -50,7 +50,11 @@ mysqli_close($db);
 </header>
 <main class="adminmain">
     <section class="admininfo">
-        <h2 class="admincenter">Afspraken</h2>
+        <div class="flexheaders">
+            <h2>Afspraken</h2>
+            <h2>Klanten</h2>
+        </div>
+        <section class="flex">
         <section class="tim admincenter">
             <table>
                 <thead>
@@ -58,10 +62,6 @@ mysqli_close($db);
                     <th>Positie</th>
                     <th>Voornaam</th>
                     <th>Achternaam</th>
-                    <th>Email</th>
-                    <th>Tijd</th>
-                    <th>Datum</th>
-                    <th>Text</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -70,19 +70,11 @@ mysqli_close($db);
                         <th><?= htmlentities($index + 1); ?></th>
                         <th><?= htmlentities($reservations['first_name'] ?? ''); ?></th>
                         <th><?= htmlentities($reservations['last_name'] ?? ''); ?></th>
-                        <th><?= htmlentities($reservations['email'] ?? ''); ?></th>
-                        <th><?= htmlentities($reservations['time'] ?? ''); ?></th>
-                        <th><?= htmlentities($reservations['date'] ?? ''); ?></th>
-                        <th><?= htmlentities($reservations['text'] ?? ''); ?></th>
                     </tr>
                 <?php endforeach; ?>
                 </tbody>
             </table>
         </section>
-        <div class="adminlinks admincenter">
-            <a href="adminappointments.php">Afspraken</a>
-        </div>
-        <h2 class="admincenter">Klanten</h2>
         <section class="tim admincenter">
             <table>
                 <thead>
@@ -90,7 +82,6 @@ mysqli_close($db);
                     <th>Positie</th>
                     <th>Voornaam</th>
                     <th>Achternaam</th>
-                    <th>Email</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -99,15 +90,16 @@ mysqli_close($db);
                         <th><?= htmlentities($index + 1) ?? ''; ?></th>
                         <th><?= htmlentities($users['first_name'] ?? ''); ?></th>
                         <th><?= htmlentities($users['last_name'] ?? ''); ?></th>
-                        <th><?= htmlentities($users['email'] ?? ''); ?></th>
                     </tr>
                 <?php endforeach; ?>
                 </tbody>
             </table>
         </section>
-        <div class="adminlinks admincenter">
+        </section>
+          <div class="adminlinks flexlinks">
+            <a href="adminappointments.php">Afspraken</a>
             <a href="adminusers.php">Klanten</a>
-        </div>
+          </div>
         <h2 class="admincenter">Blog</h2>
         <section class="tim admincenter">
             <!--Blog section-->
