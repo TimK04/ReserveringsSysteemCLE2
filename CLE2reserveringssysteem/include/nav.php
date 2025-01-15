@@ -22,6 +22,9 @@
         <a href=""><img class="logo" src="images/inlog.png" alt="Profiel"></a>
         <div class="dropdown_items" id="person">
             <a href="profile.php">Profiel</a>
+            <?php if ($_SESSION['admin_id'] == 1) { ?>
+                <a href="admin.php">Admin</a>
+            <?php } ?>
             <?php if (isset($_SESSION['Login'])) { ?>
                 <a href="logout.php">Logout</a>
             <?php } else { ?>

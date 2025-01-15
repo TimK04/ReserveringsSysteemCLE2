@@ -61,7 +61,6 @@ nav {
     display: flex;
     align-items: baseline;
     text-align: center;
-    /*align-items: stretch;*/
 }
 
 .nav_links button {
@@ -87,7 +86,7 @@ nav {
 
 .logo {
     width: 45px;
-    margin: 0 2px;
+    margin: 1vw 5px;
 }
 
 .profile {
@@ -113,14 +112,12 @@ nav {
 
 .dropdown_items a {
     display: block;
-    /*padding: 10px 20px;*/
     width: 92px;
     text-decoration: none;
     color: var(--textColorYellow);
 }
 
 .dropdown_items a:hover {
-    /*padding: 10px 10px 10px 10px;*/
     text-decoration: none;
     background-color: var(--linkNavHover);
     color: var(--textColorYellow);
