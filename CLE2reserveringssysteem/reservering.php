@@ -15,7 +15,8 @@ if (isset($_POST['submit'])) {
     $lastName = mysqli_escape_string($db, $_POST['last_name']);
     $email = mysqli_escape_string($db, $_POST['email']);
     $needs = mysqli_escape_string($db, $_POST['needs']);
-
+    $date = date('Y-m-d', strtotime($_POST['selectedDate']));
+    
     if ($firstName === '') {
         $errors['first_name'] = 'Voornaam mag niet leeg zijn';
     }
@@ -31,10 +32,13 @@ if (isset($_POST['submit'])) {
     if ($needs === '') {
         $errors['needs'] = 'Dit veld mag niet leeg zijn';
     }
+    if ($date === '') {
+        $errors['selectedDate'] = 'Je moet een datum selecteren';
+    }
 
     if (empty($errors)) {
-        $query = "INSERT INTO reservations(first_name, last_name, email, text) 
-        VALUES ('$firstName','$lastName','$email','$needs')";
+        $query = "INSERT INTO reservations(first_name, last_name, email, text, date) 
+        VALUES ('$firstName','$lastName','$email','$needs', '$date')";
 
         $result = mysqli_query($db, $query);
 
@@ -68,11 +72,33 @@ if (isset($_POST['submit'])) {
 </header>
 <main>
     <form class="intake" action="" method="post">
-        <div class="calender">
-            <div>
+        <div class="calendercontainer">
+            <div class="header">
                 <h2>Kies een datum</h2>
             </div>
-            <p>insert calendar</p>
+            <div id="calendar">
+                <div id="header">
+                    <button class="button" id="prevMonth" type="button">Vorige</button>
+                    <h2 id="monthAndYear"></h2>
+                    <button class="button" id="nextMonth" type="button">Volgende</button>
+                </div>
+                <table id="calendarTable">
+                    <thead>
+                    <tr>
+                        <th>Ma</th>
+                        <th>Di</th>
+                        <th>Wo</th>
+                        <th>Do</th>
+                        <th>Vr</th>
+                        <th>Za</th>
+                        <th>Zo</th>
+                    </tr>
+                    </thead>
+                    <tbody id="calendarBody"></tbody>
+                </table>
+            </div>
+            <input type="hidden" id="selectedDate" name="selectedDate">
+            <p class="error"> <?= $errors['selectedDate'] ?? '' ?> </p>
         </div>
         <div class="column">
             <label for="first_name">Voornaam:</label>
@@ -104,5 +130,6 @@ if (isset($_POST['submit'])) {
 <div id="contentfooter">
 </div>
 <script src="include/screensize.js"></script>
+<script src="include/calender.js"></script>
 </body>
 </html>

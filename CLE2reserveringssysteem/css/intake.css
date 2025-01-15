@@ -25,7 +25,7 @@ form div {
     flex: 1;
 }
 
-.calender {
+.calendercontainer {
     background-color: var(--colorCalender);
     border-radius: 15px;
 }
@@ -40,7 +40,7 @@ form div {
     gap: 0.5vh;
 }
 
-.calender div {
+.calendercontainer .header {
     background-color: var(--navAndFooter);
     border-radius: 15px;
     text-align: center;
@@ -50,6 +50,10 @@ form div {
     color: red;
 }
 
+.calendercontainer .error {
+    padding: 10px;
+}
+
 .succesStyle {
     text-align: center;
 }
@@ -57,4 +61,39 @@ form div {
 .succes {
     color: var(--textColorBrown);
     font-size: 1.25rem;
+}
+
+/*WIP calender*/
+#calendar {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#calendarTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+#calendarTable th, #calendarTable td {
+    width: 14%;
+    padding: 10px;
+    text-align: center;
+}
+
+#calendarTable td {
+    cursor: pointer;
+}
+
+#calendarTable td:hover, #calendarTable td.selected {
+    background-color: var(--colorButton);
+    color: var(--textColorBrown);
+    border-radius: 100px;
 }
