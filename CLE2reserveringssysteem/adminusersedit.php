@@ -3,7 +3,7 @@
 require_once "include/database.php";
 session_start();
 $id = $_GET['id'];
-if ($_SESSION['admin_id'] !== 1) {
+if ($_SESSION['admin_id'] != 1) {
     header('location: index.php');
     exit;
 }
@@ -67,6 +67,7 @@ if (isset($_POST['submit'])) {
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
     <title>Klanten Aanpassen</title>
 </head>
 <body>
