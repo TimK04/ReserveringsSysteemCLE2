@@ -16,12 +16,9 @@ session_start();
     <title>Over Auniek Interieurs</title>
 </head>
 <body>
-<?php if ($t < "20") {
-    echo "Have a good day!";
-} else {
-    echo "Have a good night!";
-} ?>
-<?php require_once 'include/nav.php' ?>
+<div id="contentnav">
+</div>
+<script src="include/screensize.js"></script>
 <header>
     <div>
         <h1>Over Auniek Interieur</h1>
@@ -46,6 +43,8 @@ session_start();
         </div>
     </section>
 </main>
-<?php require_once 'include/footer.php' ?>
+<div id="contentfooter">
+</div>
+<script src="include/screensize.js"></script>
 </body>
 </html>
