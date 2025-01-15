@@ -33,7 +33,7 @@ mysqli_close($db);
 <body>
 <?php require_once 'include/nav.php' ?>
 <header>
-    <h1>Admin Reserveringen</h1>
+    <h1 class="admincenter">Admin Reserveringen</h1>
 </header>
 <main>
     <section class="admin admincenter">

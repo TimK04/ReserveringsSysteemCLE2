@@ -22,7 +22,7 @@ if ($_SESSION['admin_id'] != 1) {
 <body>
 <?php require_once 'include/nav.php' ?>
 <header>
-    <h1>Admin Profiel</h1>
+    <h1 class="admincenter">Admin Profiel</h1>
 </header>
 <main>
     <a href="admin.php">Admin Homepagina</a>

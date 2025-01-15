@@ -44,7 +44,7 @@ mysqli_close($db);
 <body>
 <?php require_once 'include/nav.php' ?>
 <header>
-    <h1>Admin Pagina</h1>
+    <h1 class="admincenter">Admin Pagina</h1>
 </header>
 <main class="adminmain">
    <section class="adminspacebetween">
@@ -104,7 +104,7 @@ mysqli_close($db);
        </section>
    </section>
 
-    <section class="adminspacebetween">
+    <section class="adminspacebetween adminlinks">
         <a href="adminusers.php">Klanten</a>
         <a href="adminappointments.php">Afspraken</a>
         <a href="adminprofile.php">Profiel</a>
