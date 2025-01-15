@@ -78,7 +78,9 @@ mysqli_close($db);
     <link rel="stylesheet" href="css/user.css">
 </head>
 <body>
-<?php include_once 'include/nav.php' ?>
+<div id="contentnav">
+</div>
+<script src="include/screensize.js"></script>
 <header>
     <h1>Auniek Interieur - Inloggen</h1>
 </header>
@@ -115,6 +117,8 @@ mysqli_close($db);
 
     </form>
 </main>
-<?php include_once 'include/footer.php' ?>
+<div id="contentfooter">
+</div>
+<script src="include/screensize.js"></script>
 </body>
 </html>

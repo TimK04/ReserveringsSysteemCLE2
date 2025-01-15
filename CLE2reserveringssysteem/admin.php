@@ -42,67 +42,69 @@ mysqli_close($db);
     <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
-<?php require_once 'include/nav.php' ?>
+<div id="contentnav">
+</div>
+<script src="include/screensize.js"></script>
 <header>
     <h1 class="admincenter">Admin Pagina</h1>
 </header>
 <main class="adminmain">
-   <section class="adminspacebetween">
-    <section class="tim">
-        <table>
-            <thead>
-            <tr>
-                <th>Positie</th>
-                <th>Voornaam</th>
-                <th>Achternaam</th>
-                <th>Email</th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php foreach ($users as $index => $users): ?>
+    <section class="adminspacebetween">
+        <section class="tim">
+            <table>
+                <thead>
                 <tr>
-                    <th><?= htmlentities($index + 1) ?? ''; ?></th>
-                    <th><?= htmlentities($users['first_name'] ?? ''); ?></th>
-                    <th><?= htmlentities($users['last_name'] ?? ''); ?></th>
-                    <th><?= htmlentities($users['email'] ?? ''); ?></th>
+                    <th>Positie</th>
+                    <th>Voornaam</th>
+                    <th>Achternaam</th>
+                    <th>Email</th>
                 </tr>
-            <?php endforeach; ?>
-            </tbody>
-        </table>
-    </section>
+                </thead>
+                <tbody>
+                <?php foreach ($users as $index => $users): ?>
+                    <tr>
+                        <th><?= htmlentities($index + 1) ?? ''; ?></th>
+                        <th><?= htmlentities($users['first_name'] ?? ''); ?></th>
+                        <th><?= htmlentities($users['last_name'] ?? ''); ?></th>
+                        <th><?= htmlentities($users['email'] ?? ''); ?></th>
+                    </tr>
+                <?php endforeach; ?>
+                </tbody>
+            </table>
+        </section>
 
-    <section class="tim">
-        <table>
-            <thead>
-            <tr>
-                <th>Positie</th>
-                <th>Voornaam</th>
-                <th>Achternaam</th>
-                <th>Email</th>
-                <th>Tijd</th>
-                <th>Datum</th>
-                <th>Text</th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php foreach ($reservations as $index => $reservations): ?>
+        <section class="tim">
+            <table>
+                <thead>
                 <tr>
-                    <th><?= htmlentities($index + 1); ?></th>
-                    <th><?= htmlentities($reservations['first_name'] ?? ''); ?></th>
-                    <th><?= htmlentities($reservations['last_name'] ?? ''); ?></th>
-                    <th><?= htmlentities($reservations['email'] ?? ''); ?></th>
-                    <th><?= htmlentities($reservations['time'] ?? ''); ?></th>
-                    <th><?= htmlentities($reservations['date'] ?? ''); ?></th>
-                    <th><?= htmlentities($reservations['text'] ?? ''); ?></th>
+                    <th>Positie</th>
+                    <th>Voornaam</th>
+                    <th>Achternaam</th>
+                    <th>Email</th>
+                    <th>Tijd</th>
+                    <th>Datum</th>
+                    <th>Text</th>
                 </tr>
-            <?php endforeach; ?>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                <?php foreach ($reservations as $index => $reservations): ?>
+                    <tr>
+                        <th><?= htmlentities($index + 1); ?></th>
+                        <th><?= htmlentities($reservations['first_name'] ?? ''); ?></th>
+                        <th><?= htmlentities($reservations['last_name'] ?? ''); ?></th>
+                        <th><?= htmlentities($reservations['email'] ?? ''); ?></th>
+                        <th><?= htmlentities($reservations['time'] ?? ''); ?></th>
+                        <th><?= htmlentities($reservations['date'] ?? ''); ?></th>
+                        <th><?= htmlentities($reservations['text'] ?? ''); ?></th>
+                    </tr>
+                <?php endforeach; ?>
+                </tbody>
+            </table>
+        </section>
+        <section class="tim">
+            <!--Blog section-->
+        </section>
     </section>
-       <section class="tim">
-             <!--Blog section-->
-       </section>
-   </section>
 
     <section class="adminspacebetween adminlinks">
         <a href="adminusers.php">Klanten</a>
@@ -111,6 +113,8 @@ mysqli_close($db);
     </section>
 
 </main>
-<?php require_once 'include/footer.php' ?>
+<div id="contentfooter">
+</div>
+<script src="include/screensize.js"></script>
 </body>
 </html>

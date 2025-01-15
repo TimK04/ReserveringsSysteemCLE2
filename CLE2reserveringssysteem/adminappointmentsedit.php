@@ -80,7 +80,9 @@ if (isset($_POST['submit'])) {
     <title>Reserveringen Aanpassen</title>
 </head>
 <body>
-<?php require_once 'include/nav.php' ?>
+<div id="contentnav">
+</div>
+<script src="include/screensize.js"></script>
 <header>
     <h1 class="admincenter">Reserveringen Aanpassen</h1>
 </header>
@@ -120,6 +122,8 @@ if (isset($_POST['submit'])) {
     </form>
     <a href="adminappointments.php">Ga Terug</a>
 </main>
-<?php require_once 'include/footer.php' ?>
+<div id="contentfooter">
+</div>
+<script src="include/screensize.js"></script>
 </body>
 </html>

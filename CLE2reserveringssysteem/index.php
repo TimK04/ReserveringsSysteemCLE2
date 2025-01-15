@@ -14,7 +14,9 @@ session_start();
     <title>Auniek Interieur - Home</title>
 </head>
 <body>
-<?php require_once 'include/nav.php' ?>
+<div id="contentnav">
+</div>
+<script src="include/screensize.js"></script>
 <header>
     <div>
         <h1>Auniek Interieur</h1>
@@ -84,6 +86,8 @@ session_start();
         </div>
     </section>
 </main>
-<?php require_once 'include/footer.php' ?>
+<div id="contentfooter">
+</div>
+<script src="include/screensize.js"></script>
 </body>
 </html>

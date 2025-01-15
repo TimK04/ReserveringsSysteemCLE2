@@ -31,7 +31,9 @@ mysqli_close($db);
     <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
-<?php require_once 'include/nav.php' ?>
+<div id="contentnav">
+</div>
+<script src="include/screensize.js"></script>
 <header>
     <h1 class="admincenter">Admin Reserveringen</h1>
 </header>
@@ -72,6 +74,8 @@ mysqli_close($db);
     <a href="admin.php">Admin Home</a>
 
 </main>
-<?php require_once 'include/footer.php' ?>
+<div id="contentfooter">
+</div>
+<script src="include/screensize.js"></script>
 </body>
 </html>

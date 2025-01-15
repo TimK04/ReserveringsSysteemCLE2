@@ -19,6 +19,8 @@ session_start();
 <main>
 
 </main>
-<?php require_once 'include/footer.php' ?>
+<div id="contentfooter">
+</div>
+<script src="include/screensize.js"></script>
 </body>
 </html>

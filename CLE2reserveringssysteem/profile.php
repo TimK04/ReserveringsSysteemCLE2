@@ -15,10 +15,14 @@ session_start();
     <title>Auniek Interieur - Profiel</title>
 </head>
 <body>
-<?php require_once 'include/nav.php' ?>
+<div id="contentnav">
+</div>
+<script src="include/screensize.js"></script>
 <main>
 
 </main>
-<?php require_once 'include/footer.php' ?>
+<div id="contentfooter">
+</div>
+<script src="include/screensize.js"></script>
 </body>
 </html>

@@ -56,7 +56,9 @@ if (isset($_POST['submit'])) {
     <title>Auniek Interieur - Intake</title>
 </head>
 <body>
-<?php require_once 'include/nav.php' ?>
+<div id="contentnav">
+</div>
+<script src="include/screensize.js"></script>
 <?php if (isset($_SESSION['admin_id']) && $_SESSION['admin_id'] == 1) {
     require_once 'include/adminnav.php';
 } ?>
@@ -99,6 +101,8 @@ if (isset($_POST['submit'])) {
         </div>
     </form>
 </main>
-<?php require_once 'include/footer.php' ?>
+<div id="contentfooter">
+</div>
+<script src="include/screensize.js"></script>
 </body>
 </html>

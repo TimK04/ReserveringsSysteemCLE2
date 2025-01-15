@@ -18,7 +18,9 @@ session_start();
     <title>Auniek Interieur - Contact</title>
 </head>
 <body>
-<?php require_once 'include/nav.php' ?>
+<div id="contentnav">
+</div>
+<script src="include/screensize.js"></script>
 <header>
     <h1> Contact</h1>
 </header>
@@ -63,6 +65,8 @@ session_start();
         </div>
     </div>
 </main>
-<?php require_once 'include/footer.php' ?>
+<div id="contentfooter">
+</div>
+<script src="include/screensize.js"></script>
 </body>
 </html>
