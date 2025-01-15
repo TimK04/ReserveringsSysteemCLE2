@@ -90,3 +90,22 @@ button:hover {
 .error {
     color: red;
 }
+
+.contactContainer {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    color: var(--textColorBrown);
+
+}
+
+.contactForm {
+    margin-right: 5vw;
+    margin-left: 10vw;
+}
+
+.contactContainer img {
+    margin: 1vh;
+    height: 7.5vh;
+
+}
