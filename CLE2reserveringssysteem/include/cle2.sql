@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 14, 2025 at 12:14 PM
+-- Generation Time: Jan 15, 2025 at 01:19 PM
 -- Server version: 8.4.2
 -- PHP Version: 8.3.13
 
@@ -47,6 +47,21 @@ INSERT INTO `reservations` (`id`, `first_name`, `last_name`, `email`, `time`, `d
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `review`
+--
+
+CREATE TABLE `review` (
+  `id` bigint NOT NULL,
+  `page_id` bigint NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `content` text CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `rating` tinyint(1) NOT NULL,
+  `submit_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -70,9 +85,10 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `admi
 (7, 'Thomas', 'van Bockel', '2@mail.com', '$2y$10$LcxVFs9aDk0U/zN510ztvOc3DWx8KROsjxEAox94M8Aw3xxHYN/tW', 0),
 (8, 'Thomas', 'van Bockel', 'mail@iets.nl', '$2y$10$cpIQQVZTtOwrafTZYtdZK.9KndY67AGH7GQf33cI9uRJWZJMioobq', 1),
 (9, 'Thomas', 'van Bockel', 'dit@email.com', '$2y$10$HNlqlyz05/btSyFDEExvJ.3jEjWfWInza63FxOHxbB0nbX3v.RjEm', 0),
-(10, 'tell', 'me', 'why@someone.like', '$2y$10$PUQRD3iK3NitgteEERzUV.dVKPabXU6F.Jjk2hn0/Y4UKwkAzDKsS', 1),
+(10, 'tell', 'me', 'why@someone.like', '$2y$10$PUQRD3iK3NitgteEERzUV.dVKPabXU6F.Jjk2hn0/Y4UKwkAzDKsS', 0),
 (11, 'Test', 'Test', 'iets@google.com', '$2y$10$LcnjkhajPzIhXXVMjgCMBOks1L/bOvUks2O85Am0ru8OSUAHxmdoC', 0),
-(12, 'Test', '01234567890123456789012345678901234567890123456789', 'test@testtest.com', '$2y$10$0uCQa6iyKzGdUL3sf9eWkOLSW1kekxkFOO6dzS/.SwTZiCJtSx2o2', 0);
+(12, 'Test', '01234567890123456789012345678901234567890123456789', 'test@testtest.com', '$2y$10$0uCQa6iyKzGdUL3sf9eWkOLSW1kekxkFOO6dzS/.SwTZiCJtSx2o2', 0),
+(13, 'test', 'test', 'test@testtest.nl', '$2y$10$JmitdZuKkWPHlX0TPriHme5Ro/BVchPZY37mfyDtaKeO7RGCPY.S6', 0);
 
 --
 -- Indexes for dumped tables
@@ -82,6 +98,12 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `admi
 -- Indexes for table `reservations`
 --
 ALTER TABLE `reservations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `review`
+--
+ALTER TABLE `review`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -102,10 +124,16 @@ ALTER TABLE `reservations`
   MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `review`
+--
+ALTER TABLE `review`
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
