@@ -97,3 +97,15 @@ form div {
     color: var(--textColorBrown);
     border-radius: 100px;
 }
+
+#header .button {
+    color: var(--textColorYellow);
+    background-color: var(--textColorBrown);
+    transition: 500ms;
+}
+
+#header .button:hover {
+    color: var(--textColorBrown);
+    background-color: var(--colorButton);
+    transition: 500ms;
+}

@@ -15,7 +15,9 @@ session_start();
     <title>Auniek Interieur - Nieuwbouw</title>
 </head>
 <body>
-<?php require_once 'include/nav.php' ?>
+<div id="contentnav">
+</div>
+<script src="include/screensize.js"></script>
 <main>
 
 </main>
