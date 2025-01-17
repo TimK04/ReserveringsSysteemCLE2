@@ -5,6 +5,6 @@
         <a href="admin.php">Navigatie</a>
         <a href="">Portfolio</a>
         <a href="adminappointments.php">Afspraken</a>
-        <a href="">Blog</a>
+        <a href="">Reviews</a>
     </div>
 </nav>

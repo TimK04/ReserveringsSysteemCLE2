@@ -18,12 +18,12 @@ $reservations = [];
 $row = mysqli_fetch_assoc($result);
 $reservations[] = $row;
 
-$firstName = mysqli_escape_string($db, $row['first_name']?? '');
-$lastName = mysqli_escape_string($db, $row['last_name']?? '');
-$email = mysqli_escape_string($db, $row['email']?? '');
-$time = mysqli_escape_string($db, $row['time']?? '');
-$date = mysqli_escape_string($db, $row['date']?? '');
-$text = mysqli_escape_string($db, $row['text']??'');
+$firstName = mysqli_escape_string($db, $row['first_name'] ?? '');
+$lastName = mysqli_escape_string($db, $row['last_name'] ?? '');
+$email = mysqli_escape_string($db, $row['email'] ?? '');
+$time = mysqli_escape_string($db, $row['time'] ?? '');
+$date = mysqli_escape_string($db, $row['date'] ?? '');
+$text = mysqli_escape_string($db, $row['text'] ?? '');
 
 if (isset($_POST['submit'])) {
 
@@ -77,12 +77,13 @@ if (isset($_POST['submit'])) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/admin.css">
-    <title>Reserveringen Aanpassen</title>
+    <title>Auniek Interieur - Admin Reserveringen Aanpassen</title>
 </head>
 <body>
 <div id="contentnav">
 </div>
 <script src="include/screensize.js"></script>
+<?php require_once 'include/adminnav.php'; ?>
 <header>
     <h1 class="admincenter">Reserveringen Aanpassen</h1>
 </header>
@@ -121,7 +122,7 @@ if (isset($_POST['submit'])) {
         <input type="submit" name="submit" value="Aanpassen">
     </form>
     <div class="adminlinks admincentern">
-    <a href="adminappointments.php">Ga Terug</a>
+        <a href="adminappointments.php">Ga Terug</a>
     </div>
 </main>
 <div id="contentfooter">

@@ -18,9 +18,9 @@ $users = [];
 $row = mysqli_fetch_assoc($result);
 $users[] = $row;
 
-$firstName = mysqli_escape_string($db, $row['first_name']?? '');
-$lastName = mysqli_escape_string($db, $row['last_name']?? '');
-$email = mysqli_escape_string($db, $row['email']?? '');
+$firstName = mysqli_escape_string($db, $row['first_name'] ?? '');
+$lastName = mysqli_escape_string($db, $row['last_name'] ?? '');
+$email = mysqli_escape_string($db, $row['email'] ?? '');
 $adminId = $row['admin_id'];
 
 if (isset($_POST['submit'])) {
@@ -68,12 +68,13 @@ if (isset($_POST['submit'])) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/admin.css">
-    <title>Klanten Aanpassen</title>
+    <title>Auniek Interieur - Admin Klanten Aanpassen</title>
 </head>
 <body>
 <div id="contentnav">
 </div>
 <script src="include/screensize.js"></script>
+<?php require_once 'include/adminnav.php'; ?>
 <header>
     <h1 class="admincenter">Klanten Aanpassen</h1>
 </header>
@@ -100,7 +101,7 @@ if (isset($_POST['submit'])) {
         <button class="button" type="submit" name="submit">aanpassen</button>
     </form>
     <div class="adminlinks admincenter">
-    <a href="adminusers.php">Ga Terug</a>
+        <a href="adminusers.php">Ga Terug</a>
     </div>
 </main>
 <div id="contentfooter">

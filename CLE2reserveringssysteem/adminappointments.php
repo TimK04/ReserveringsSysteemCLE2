@@ -26,7 +26,7 @@ mysqli_close($db);
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Admin Reserveringen</title>
+    <title>Auniek Interieur - Admin Reserveringen</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/admin.css">
 </head>
@@ -34,6 +34,7 @@ mysqli_close($db);
 <div id="contentnav">
 </div>
 <script src="include/screensize.js"></script>
+<?php require_once 'include/adminnav.php'; ?>
 <header>
     <h1 class="admincenter">Admin Reserveringen</h1>
 </header>
@@ -71,7 +72,7 @@ mysqli_close($db);
         </table>
     </section>
     <div class="adminlinks admincenter">
-    <a href="admin.php" class="adminlinks">Admin Home</a>
+        <a href="admin.php" class="adminlinks">Admin Home</a>
     </div>
 </main>
 <div id="contentfooter">

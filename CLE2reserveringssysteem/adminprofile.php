@@ -15,7 +15,7 @@ if ($_SESSION['admin_id'] != 1) {
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Admin Profiel</title>
+    <title>Auniek Interieur - Admin Profiel</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/admin.css">
 </head>
@@ -23,12 +23,13 @@ if ($_SESSION['admin_id'] != 1) {
 <div id="contentnav">
 </div>
 <script src="include/screensize.js"></script>
+<?php require_once 'include/adminnav.php'; ?>
 <header>
     <h1 class="admincenter">Admin Profiel</h1>
 </header>
 <main>
     <div class="adminlinks admincenter">
-    <a href="admin.php">Admin Homepagina</a>
+        <a href="admin.php">Admin Homepagina</a>
     </div>
 </main>
 <div id="contentfooter">

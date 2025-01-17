@@ -37,7 +37,7 @@ mysqli_close($db);
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Admin Homepagina</title>
+    <title>Auniek Interieur - Admin navigatie</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/admin.css">
 </head>
@@ -45,6 +45,7 @@ mysqli_close($db);
 <div id="contentnav">
 </div>
 <script src="include/screensize.js"></script>
+<?php require_once 'include/adminnav.php'; ?>
 <header>
     <h1 class="admincenter">Admin Pagina</h1>
 </header>
@@ -55,51 +56,51 @@ mysqli_close($db);
             <h2>Klanten</h2>
         </div>
         <section class="flex">
-        <section class="tim admincenter">
-            <table>
-                <thead>
-                <tr>
-                    <th>Positie</th>
-                    <th>Voornaam</th>
-                    <th>Achternaam</th>
-                </tr>
-                </thead>
-                <tbody>
-                <?php foreach ($reservations as $index => $reservations): ?>
+            <section class="tim admincenter">
+                <table>
+                    <thead>
                     <tr>
-                        <th><?= htmlentities($index + 1); ?></th>
-                        <th><?= htmlentities($reservations['first_name'] ?? ''); ?></th>
-                        <th><?= htmlentities($reservations['last_name'] ?? ''); ?></th>
+                        <th>Positie</th>
+                        <th>Voornaam</th>
+                        <th>Achternaam</th>
                     </tr>
-                <?php endforeach; ?>
-                </tbody>
-            </table>
-        </section>
-        <section class="tim admincenter">
-            <table>
-                <thead>
-                <tr>
-                    <th>Positie</th>
-                    <th>Voornaam</th>
-                    <th>Achternaam</th>
-                </tr>
-                </thead>
-                <tbody>
-                <?php foreach ($users as $index => $users): ?>
+                    </thead>
+                    <tbody>
+                    <?php foreach ($reservations as $index => $reservations): ?>
+                        <tr>
+                            <th><?= htmlentities($index + 1); ?></th>
+                            <th><?= htmlentities($reservations['first_name'] ?? ''); ?></th>
+                            <th><?= htmlentities($reservations['last_name'] ?? ''); ?></th>
+                        </tr>
+                    <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </section>
+            <section class="tim admincenter">
+                <table>
+                    <thead>
                     <tr>
-                        <th><?= htmlentities($index + 1) ?? ''; ?></th>
-                        <th><?= htmlentities($users['first_name'] ?? ''); ?></th>
-                        <th><?= htmlentities($users['last_name'] ?? ''); ?></th>
+                        <th>Positie</th>
+                        <th>Voornaam</th>
+                        <th>Achternaam</th>
                     </tr>
-                <?php endforeach; ?>
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                    <?php foreach ($users as $index => $users): ?>
+                        <tr>
+                            <th><?= htmlentities($index + 1) ?? ''; ?></th>
+                            <th><?= htmlentities($users['first_name'] ?? ''); ?></th>
+                            <th><?= htmlentities($users['last_name'] ?? ''); ?></th>
+                        </tr>
+                    <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </section>
         </section>
-        </section>
-          <div class="adminlinks flexlinks">
+        <div class="adminlinks flexlinks">
             <a href="adminappointments.php">Afspraken</a>
             <a href="adminusers.php">Klanten</a>
-          </div>
+        </div>
         <h2 class="admincenter">Blog</h2>
         <section class="tim admincenter">
             <!--Blog section-->
