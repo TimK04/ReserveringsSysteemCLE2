@@ -11,7 +11,6 @@ if (isset($_SESSION['Login'])) {
 }
 
 if (isset($_POST['submit'])) {
-    print_r($_POST);
     $firstName = mysqli_escape_string($db, $_POST['first_name']);
     $lastName = mysqli_escape_string($db, $_POST['last_name']);
     $email = mysqli_escape_string($db, $_POST['email']);

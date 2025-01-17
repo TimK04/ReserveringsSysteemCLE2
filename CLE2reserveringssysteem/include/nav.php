@@ -26,7 +26,9 @@ session_start();
     <div class="dropdown profile">
         <a href=""><img class="logo" src="images/inlog.png" alt="Profiel"></a>
         <div class="dropdown_items" id="person">
-            <a href="profile.php">Profiel</a>
+            <?php if (isset($_SESSION['Login'])) { ?>
+                <a href="profile.php">Profiel</a>
+            <?php } ?>
             <?php if (isset($_SESSION['admin_id']) && $_SESSION['admin_id'] == 1) { ?>
                 <a href="admin.php">Admin</a>
             <?php } ?>
