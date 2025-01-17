@@ -5,6 +5,11 @@ session_start();
 $login = false;
 
 
+if (isset($_SESSION['Login'])) {
+    header('location: logout.php');
+    exit;
+}
+
 if (isset($_POST['submit'])) {
 
     $firstName = mysqli_escape_string($db, $_POST['firstName']);
