@@ -2,8 +2,12 @@
 /** @var mysqli $db */
 session_start();
 require_once 'include/database.php';
+
+
 $firstName = $_SESSION['firstName'];
 $email = $_SESSION['email'];
+$id = $_SESSION['id'];
+
 
 $query = " 
 SELECT * FROM `users` WHERE `email` = '$email'
@@ -21,13 +25,17 @@ $sql = "
 SELECT * FROM `reservations` 
 INNER JOIN `users` 
 ON reservations.user_id = users.id 
-WHERE users.email = '$email'
+WHERE users.id = $id
 ";
 
 $result = mysqli_query($db, $sql)
 or die('Error: ' . mysqli_error($db) . 'with query ' . $sql);
 
-$reservations = mysqli_fetch_assoc($result);
+while ($row = mysqli_fetch_assoc($result)) {
+    $reservations[] = $row;
+}
+
+
 mysqli_close($db);
 ?>
 
@@ -49,45 +57,47 @@ mysqli_close($db);
 <header>
     <h1> Welkom <?= $firstName ?></h1>
 </header>
-<main>
-
-    <h2>Reservering</h2>
-    <h3>Datum</h3>
-    <p>
-        <?= $reservations['date'] ?>
-    </p>
-
-    <h3>Tijd</h3>
-    <p>
-        <?= $reservations['time'] ?>
-    </p>
-
-    <h3>Wat verwacht u van ons</h3>
-    <p>
-        <?= $reservations['text'] ?>
-    </p>
-
-
-    <h2>Uw gegevens</h2>
+<main class="intake">
     <div>
-        <h3>Voornaam:</h3>
-        <p>
-            <?= $users['first_name'] ?>
-        </p>
+        <thead>
+        <h2>Reservering</h2>
+        <th>Datum</th>
+        <th>Tijd</th>
+        <th>Wat verwacht u van ons</th>
+        </thead>
+        <tbody>
+        <?php foreach ($reservations as $index => $reservation): ?>
+            <tr>
+                <td><?= $index + 1 ?></td>
+                <td> <?= $reservation['date'] ?></td>
+                <td><?= $reservation['time'] ?></td>
+                <td><?= $reservation['text'] ?></td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
     </div>
     <div>
-        <h3>Achternaam:</h3>
-        <p>
-            <?= $users['last_name'] ?>
-        </p>
-    </div>
-    <div>
-        <h3>Email:</h3>
-        <p>
-            <?= $users['email'] ?>
-        </p>
-    </div>
 
+        <h2>Uw gegevens</h2>
+        <div>
+            <h3>Voornaam:</h3>
+            <p>
+                <?= $users['first_name'] ?>
+            </p>
+        </div>
+        <div>
+            <h3>Achternaam:</h3>
+            <p>
+                <?= $users['last_name'] ?>
+            </p>
+        </div>
+        <div>
+            <h3>Email:</h3>
+            <p>
+                <?= $users['email'] ?>
+            </p>
+        </div>
+    </div>
 </main>
 <div id="contentfooter">
 </div>
