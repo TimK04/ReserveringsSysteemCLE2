@@ -41,20 +41,20 @@ if (isset($_POST['submit'])) {
             $result = mysqli_query($db, $query)
             or die('Error: ' . mysqli_error($db) . 'with query ' . $query);
             while ($row = mysqli_fetch_assoc($result)) {
-                $hash = $row;
+                $users = $row;
             }
 
         } else {
             $errors['loginFailed'] = 'Login failed';
         }
         if (empty($errors)) {
-            if (password_verify($password, $hash['password']) == true) {
+            if (password_verify($password, $users['password']) == true) {
                 $_SESSION['Login'] = true;
-                $_SESSION['firstName'] = $hash['first_name'];
-                $_SESSION['lastName'] = $hash['last_name'];
-                $_SESSION['email'] = $hash['email'];
-                $_SESSION['admin_id'] = $hash['admin_id'];
-
+                $_SESSION['firstName'] = $users['first_name'];
+                $_SESSION['lastName'] = $users['last_name'];
+                $_SESSION['email'] = $users['email'];
+                $_SESSION['admin_id'] = $users['admin_id'];
+                $_SESSION['id'] = $users['id'];
                 header('location: index.php');
                 exit();
             } else {
