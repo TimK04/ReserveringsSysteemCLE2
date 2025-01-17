@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 15, 2025 at 01:19 PM
+-- Generation Time: Jan 17, 2025 at 01:04 PM
 -- Server version: 8.4.2
 -- PHP Version: 8.3.13
 
@@ -34,29 +34,30 @@ CREATE TABLE `reservations` (
   `email` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `time` time DEFAULT NULL,
   `date` date DEFAULT NULL,
-  `text` text COLLATE utf8mb4_general_ci NOT NULL
+  `text` text COLLATE utf8mb4_general_ci NOT NULL,
+  `user_id` bigint NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `reservations`
 --
 
-INSERT INTO `reservations` (`id`, `first_name`, `last_name`, `email`, `time`, `date`, `text`) VALUES
-(1, 'iemand', 'test', 'ikwildittesten@gmail.com', NULL, NULL, 'Eten heel veel eten');
+INSERT INTO `reservations` (`id`, `first_name`, `last_name`, `email`, `time`, `date`, `text`, `user_id`) VALUES
+(1, 'iemand', 'test', 'ikwildittesten@gmail.com', NULL, NULL, 'Eten heel veel eten', 3),
+(2, 'test', 'test', 'test@test.com', '00:00:00', '2005-11-11', 'kgjkdf sgkjdfjgkdfs', 2);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `review`
+-- Table structure for table `reviews`
 --
 
-CREATE TABLE `review` (
+CREATE TABLE `reviews` (
   `id` bigint NOT NULL,
-  `page_id` bigint NOT NULL,
   `name` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
   `content` text CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
   `rating` tinyint(1) NOT NULL,
-  `submit_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -88,7 +89,8 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `admi
 (10, 'tell', 'me', 'why@someone.like', '$2y$10$PUQRD3iK3NitgteEERzUV.dVKPabXU6F.Jjk2hn0/Y4UKwkAzDKsS', 0),
 (11, 'Test', 'Test', 'iets@google.com', '$2y$10$LcnjkhajPzIhXXVMjgCMBOks1L/bOvUks2O85Am0ru8OSUAHxmdoC', 0),
 (12, 'Test', '01234567890123456789012345678901234567890123456789', 'test@testtest.com', '$2y$10$0uCQa6iyKzGdUL3sf9eWkOLSW1kekxkFOO6dzS/.SwTZiCJtSx2o2', 0),
-(13, 'test', 'test', 'test@testtest.nl', '$2y$10$JmitdZuKkWPHlX0TPriHme5Ro/BVchPZY37mfyDtaKeO7RGCPY.S6', 0);
+(13, 'test', 'test', 'test@testtest.nl', '$2y$10$JmitdZuKkWPHlX0TPriHme5Ro/BVchPZY37mfyDtaKeO7RGCPY.S6', 0),
+(14, 'Test', 'Test', 'ditistest@test.com', '$2y$10$gqAIcFh0E/s78bQoK00QY.VPiefqfSl/FCl2hiSn5Ti9D4QpdMOQu', 0);
 
 --
 -- Indexes for dumped tables
@@ -98,12 +100,13 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `admi
 -- Indexes for table `reservations`
 --
 ALTER TABLE `reservations`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`);
 
 --
--- Indexes for table `review`
+-- Indexes for table `reviews`
 --
-ALTER TABLE `review`
+ALTER TABLE `reviews`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -121,19 +124,29 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `reservations`
 --
 ALTER TABLE `reservations`
-  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `review`
+-- AUTO_INCREMENT for table `reviews`
 --
-ALTER TABLE `review`
+ALTER TABLE `reviews`
   MODIFY `id` bigint NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `reservations`
+--
+ALTER TABLE `reservations`
+  ADD CONSTRAINT `reservations_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

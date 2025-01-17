@@ -1,8 +1,34 @@
 <?php
+/** @var mysqli $db */
 session_start();
-$firstName = $_SESSION['firstName']
+require_once 'include/database.php';
+$firstName = $_SESSION['firstName'];
+$email = $_SESSION['email'];
 
+$query = " 
+SELECT * FROM `users` WHERE `email` = '$email'
+";
+$result = mysqli_query($db, $query)
+or die('Error: ' . mysqli_error($db) . 'with query ' . $query);
 
+$users = [];
+
+$row = mysqli_fetch_assoc($result);
+
+$users = $row;
+
+$sql = "
+SELECT * FROM `reservations` 
+INNER JOIN `users` 
+ON reservations.user_id = users.id 
+WHERE users.email = '$email'
+";
+
+$result = mysqli_query($db, $sql)
+or die('Error: ' . mysqli_error($db) . 'with query ' . $sql);
+
+$reservations = mysqli_fetch_assoc($result);
+mysqli_close($db);
 ?>
 
 <!doctype html>
@@ -24,6 +50,43 @@ $firstName = $_SESSION['firstName']
     <h1> Welkom <?= $firstName ?></h1>
 </header>
 <main>
+
+    <h2>Reservering</h2>
+    <h3>Datum</h3>
+    <p>
+        <?= $reservations['date'] ?>
+    </p>
+
+    <h3>Tijd</h3>
+    <p>
+        <?= $reservations['time'] ?>
+    </p>
+
+    <h3>Wat verwacht u van ons</h3>
+    <p>
+        <?= $reservations['text'] ?>
+    </p>
+
+
+    <h2>Uw gegevens</h2>
+    <div>
+        <h3>Voornaam:</h3>
+        <p>
+            <?= $users['first_name'] ?>
+        </p>
+    </div>
+    <div>
+        <h3>Achternaam:</h3>
+        <p>
+            <?= $users['last_name'] ?>
+        </p>
+    </div>
+    <div>
+        <h3>Email:</h3>
+        <p>
+            <?= $users['email'] ?>
+        </p>
+    </div>
 
 </main>
 <div id="contentfooter">
