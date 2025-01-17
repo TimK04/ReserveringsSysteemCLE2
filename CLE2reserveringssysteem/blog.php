@@ -19,7 +19,7 @@ session_start();
 </div>
 <script src="include/screensize.js"></script>
 <main>
-
+    <h1>Coming soon!</h1>
 </main>
 <div id="contentfooter">
 </div>

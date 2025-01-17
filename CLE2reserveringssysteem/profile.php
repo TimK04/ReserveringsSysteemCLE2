@@ -1,5 +1,7 @@
 <?php
 session_start();
+$firstName = $_SESSION['firstName']
+
 
 ?>
 
@@ -18,6 +20,9 @@ session_start();
 <div id="contentnav">
 </div>
 <script src="include/screensize.js"></script>
+<header>
+    <h1> Welkom <?= $firstName ?></h1>
+</header>
 <main>
 
 </main>
