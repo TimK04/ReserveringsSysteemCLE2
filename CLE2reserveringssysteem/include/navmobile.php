@@ -45,7 +45,7 @@
             <a href="index.php">Home</a>
             <a href="overons.php">Over Auniek</a>
             <a href="portfolio.php">Portfolio</a>
-            <a href="reservering.php">Intake</a>
+            <a href="intake.php">Intake</a>
             <a href="bestaandebouw.php">Bestaande bouw</a>
             <a href="nieuwbouw.php">Nieuwbouw</a>
             <a href="blog.php">Blog</a>

@@ -17,8 +17,8 @@ header {
 }
 
 .important {
-    color: var(--textColorBrown);
-    font-size: 1.5rem;
+    color: var(--textColorBlue);
+    font-size: 1.75rem;
 }
 
 form div {
@@ -48,6 +48,7 @@ form div {
 
 .error {
     color: red;
+    text-align: left;
 }
 
 .calendercontainer .error {
@@ -96,6 +97,11 @@ form div {
     background-color: var(--colorButton);
     color: var(--textColorBrown);
     border-radius: 100px;
+}
+
+#calendarBody, th {
+    color: var(--textColorYellow);
+    font-family: "Baskerville Old Face", serif;
 }
 
 #header .button {

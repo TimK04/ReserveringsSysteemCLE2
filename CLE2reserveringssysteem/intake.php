@@ -7,16 +7,18 @@ if (isset($_SESSION['Login'])) {
     $firstName = mysqli_escape_string($db, $_SESSION['firstName']);
     $lastName = mysqli_escape_string($db, $_SESSION['lastName']);
     $email = mysqli_escape_string($db, $_SESSION['email']);
+    $id = mysqli_escape_string($db, $_SESSION['id']);
 }
 
-
 if (isset($_POST['submit'])) {
+    print_r($_POST);
     $firstName = mysqli_escape_string($db, $_POST['first_name']);
     $lastName = mysqli_escape_string($db, $_POST['last_name']);
     $email = mysqli_escape_string($db, $_POST['email']);
     $needs = mysqli_escape_string($db, $_POST['needs']);
     $date = date('Y-m-d', strtotime($_POST['selectedDate']));
-    
+    $id = $_POST['id'];
+
     if ($firstName === '') {
         $errors['first_name'] = 'Voornaam mag niet leeg zijn';
     }
@@ -32,13 +34,18 @@ if (isset($_POST['submit'])) {
     if ($needs === '') {
         $errors['needs'] = 'Dit veld mag niet leeg zijn';
     }
-    if ($date === '') {
+    if ($_POST['selectedDate'] === '') {
         $errors['selectedDate'] = 'Je moet een datum selecteren';
     }
 
     if (empty($errors)) {
-        $query = "INSERT INTO reservations(first_name, last_name, email, text, date) 
-        VALUES ('$firstName','$lastName','$email','$needs', '$date')";
+        if ($_POST['id'] != '') {
+            $query = "INSERT INTO reservations(first_name, last_name, email, text, date, user_id) 
+            VALUES ('$firstName','$lastName','$email','$needs', '$date', $id)";
+        } else {
+            $query = "INSERT INTO reservations(first_name, last_name, email, text, date) 
+            VALUES ('$firstName','$lastName','$email','$needs', '$date')";
+        }
 
         $result = mysqli_query($db, $query);
 
@@ -63,9 +70,6 @@ if (isset($_POST['submit'])) {
 <div id="contentnav">
 </div>
 <script src="include/screensize.js"></script>
-<?php if (isset($_SESSION['admin_id']) && $_SESSION['admin_id'] == 1) {
-    require_once 'include/adminnav.php';
-} ?>
 <header>
     <h1>Intake gesprek inplannen:</h1>
     <p class="important">15 min intake gesprek</p>
@@ -96,9 +100,12 @@ if (isset($_POST['submit'])) {
                     </thead>
                     <tbody id="calendarBody"></tbody>
                 </table>
+                <input type="hidden" id="selectedDate" name="selectedDate">
+                <p class="error"> <?= $errors['selectedDate'] ?? '' ?> </p>
             </div>
-            <input type="hidden" id="selectedDate" name="selectedDate">
-            <p class="error"> <?= $errors['selectedDate'] ?? '' ?> </p>
+            <div>
+                <!--Tijd Selecteren-->
+            </div>
         </div>
         <div class="column">
             <label for="first_name">Voornaam:</label>
@@ -113,11 +120,12 @@ if (isset($_POST['submit'])) {
             <input type="text" id="email" name="email" value="<?= htmlentities($email ?? '') ?>">
             <p class="error"> <?= $errors['email'] ?? '' ?> </p>
 
-            <label for="needs">Wat verwacht je van ons:</label>
+            <label for="needs">Wat verwacht u van ons:</label>
             <textarea name="needs" id="needs" cols="30" rows="10"
             ><?= htmlentities($needs ?? '') ?></textarea>
             <p class="error"> <?= $errors['needs'] ?? '' ?> </p>
 
+            <input type="hidden" id="id" name="id" value="<?= $id ?? '' ?>">
 
             <button class="button" type="submit" name="submit">Inplannen</button>
 

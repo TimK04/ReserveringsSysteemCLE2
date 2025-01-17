@@ -12,7 +12,7 @@ session_start();
         <a href="index.php">Home</a>
         <a class="about_us" href="overons.php">Over Auniek</a>
         <a href="portfolio.php">Portfolio</a>
-        <a href="reservering.php">Intake</a>
+        <a href="intake.php">Intake</a>
         <div class="dropdown">
             <button class="nav_links" id="werkwijzen" href="#">Werkwijzen</button>
             <div class="dropdown_items">
