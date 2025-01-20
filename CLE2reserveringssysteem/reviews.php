@@ -48,8 +48,6 @@ if (isset($_POST['submit'])) {
         require_once('include/database.php');
 
         $query = "INSERT INTO reviews(`name`, `content`, `rating`) VALUES ('$name','$experience',$rating)";
-
-        /** @var $db mysqli */
         $result = mysqli_query($db, $query)
         or exit('Error ' . mysqli_error($db) . ' with query ' . $query);
 
@@ -81,6 +79,7 @@ if (isset($_POST['submit'])) {
 <script src="include/screensize.js"></script>
 <header>
     <!-- Algemene sterren moeten hier komen-->
+    <h1>Reviews</h1>
 </header>
 <main>
     <section>

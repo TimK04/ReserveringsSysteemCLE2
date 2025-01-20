@@ -84,6 +84,10 @@ session_start();
                 </div>
             </article>
         </div>
+        <br>
+        <div>
+            <a class="button" href="reviews.php">Meer reviews lezen</a>
+        </div>
     </section>
 </main>
 <div id="contentfooter">
