@@ -139,7 +139,7 @@ mysqli_close($db);
         <div class="container">
             <input id="conditions" type="checkbox" name="conditions">
 
-            <label for="conditions">Ik accepteer de voorwaardes</label>
+            <label for="conditions">Ik accepteer de voorwaarden</label>
         </div>
         <p class="error">
             <?= $errors['conditions'] ?? '' ?>
