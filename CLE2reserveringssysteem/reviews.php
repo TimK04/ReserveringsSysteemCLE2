@@ -48,8 +48,6 @@ if (isset($_POST['submit'])) {
         require_once('include/database.php');
 
         $query = "INSERT INTO reviews(`name`, `content`, `rating`) VALUES ('$name','$experience',$rating)";
-        $result = mysqli_query($db, $query)
-        or die('Error ' . mysqli_error($db) . 'with query ' . $query);
 
         /** @var $db mysqli */
         $result = mysqli_query($db, $query)
