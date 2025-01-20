@@ -57,7 +57,7 @@ if (isset($_POST['submit'])) {
 
         mysqli_close($db);
 
-        header('Location: review.php');
+        header('Location: reviews.php');
         exit;
     };
 
@@ -90,7 +90,7 @@ if (isset($_POST['submit'])) {
         <form action="" method="post">
             <div>
                 <div>
-                    <label for="name">Naam</label>
+                    <label for="name">Naam*</label>
                     <div>
                         <input id="name" type="text" name="name" value="<?= htmlentities($name ?? '') ?>">
                     </div>
@@ -99,7 +99,7 @@ if (isset($_POST['submit'])) {
             </div>
             <div>
                 <div>
-                    <label for="rating">Beoordeel je ervaring!</label>
+                    <label for="rating">Beoordeel je ervaring!*</label>
                     <div class="star-rating">
                         <input type="radio" id="star5" name="rating" value="5">
                         <label for="star5" title="5 stars">★</label>
@@ -117,7 +117,7 @@ if (isset($_POST['submit'])) {
             </div>
             <div>
                 <div>
-                    <label for="experience">Deel je ervaring!</label>
+                    <label for="experience">Deel je ervaring!*</label>
                     <div>
                         <textarea id="experience" name="experience" cols="30" rows="10"></textarea>
                     </div>
@@ -126,6 +126,9 @@ if (isset($_POST['submit'])) {
             </div>
             <div>
                 <button class="button" type="submit" name="submit">Plaats review</button>
+            </div>
+            <div>
+                <label for="must">* Verplichte velden</label>
             </div>
         </form>
     </section>
