@@ -12,7 +12,7 @@
 .tim {
     background-color: #7B6340;
     color: #EEE3B4;
-    height: 17vw;
+    min-height: 17vw;
     border-radius: 7px;
     margin-bottom: 2vw;
 }
@@ -34,18 +34,22 @@
     color: #EEE3B4;
     transition: 500ms;
 }
+
 h2 {
     color: #367283;
     margin: 2vw;
 }
+
 .flex {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
+
 .flex .tim {
     width: 37vw;
 }
+
 .flexlinks {
     display: flex;
     justify-content: space-between;
@@ -53,11 +57,13 @@ h2 {
     margin-right: 15vw;
     margin-bottom: 2vw;
 }
+
 .flexheaders {
     display: flex;
     justify-content: space-between;
     text-align: center;
 }
+
 .flexheaders h2 {
     margin-left: 15vw;
     margin-right: 15vw;
