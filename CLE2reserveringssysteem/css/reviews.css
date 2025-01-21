@@ -39,3 +39,17 @@ header {
 .star-rating label:hover ~ label {
     color: gold;
 }
+
+.sectionflex {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+.reviewcard {
+    padding: 1vh;
+    text-align: center;
+    background-color: #EEE3B4;
+    border: 1px solid #EEE3B4;
+    border-radius: 5px;
+}

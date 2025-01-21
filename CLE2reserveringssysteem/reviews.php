@@ -7,7 +7,7 @@ session_start();
 
 //Haal alle reviews op
 // Query to get reviews
-$query = "SELECT * FROM reviews";
+$query = "SELECT * FROM reviews ORDER BY date DESC";
 
 // Execute the query and store the result (table in $result)
 $result = mysqli_query($db, $query)
@@ -129,7 +129,7 @@ if (isset($_POST['submit'])) {
             </div>
         </form>
     </section>
-    <section>
+    <section class="sectionflex">
         <!--    Foreach loop met alle reviews-->
         <!---->
         <!--    for(let i = 0; i< rating; i++){-->
@@ -140,10 +140,12 @@ if (isset($_POST['submit'])) {
         <!--}-->
 
         <?php foreach ($reviews as $reviews) { ?>
-            <h2><?= $reviews['name'] ?></h2>
-            <h3><?= $reviews['date'] ?></h3>
-            <p><?= $reviews['content'] ?></p>
-            <p><?= $reviews['rating'] ?></p>
+            <article class="reviewcard">
+                <h2><?= $reviews['name'] ?></h2>
+                <h3><?= $reviews['date'] ?></h3>
+                <p><?= $reviews['content'] ?></p>
+                <p><?= $reviews['rating'] ?></p>
+            </article>
         <?php } ?>
     </section>
 </main>
