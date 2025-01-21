@@ -26,19 +26,27 @@ session_start();
 </header>
 <main>
     <section>
-        <div>
+        <div class="foto">
             <!-- Aanbeveling om andere foto's te laten maken/gebruiken -->
             <img src="images/potretalyssa.webp" alt="Portret van Alyssa Haaring" class="img_about">
         </div>
-        <div>
-            <p class="about_par">
+        <div class="info">
+            <h2>Auniek Interieurs is opgericht door Alyssa Haaring</h2>
+            <h3>Wie ben ik?</h3>
+            <p>
                 Mijn naam is Alyssa Haaring. Vanaf kleins af aan wist ik al wat ik wilde worden, namelijk
                 interieuradviseur.
-                Hierbij wist ik vanaf mijn negende al dat ik naar het Hout- en Meubileringscollege in Rotterdam wilde.
-                Op mijn 17e was het dan zover: ik ging naar het Hout- en Meubileringscollege in Rotterdam. In 2022 ben
-                ik afgestudeerd en mag ik mezelf daarbij gediplomeerd interieuradviseur noemen. Met Auniek Interieurs
-                wil ik mijn klanten laten ervaren dat er meer is dan de gangbare kleuren en materialen. Denk hierbij aan
-                een visgraadvloer, stalen zwarte deuren en crèmekleurige muren.
+            </p>
+            <h3>Opleiding Hout- en Meubileringscollege</h3>
+            <p>
+                Ik wist vanaf mijn negende al dat ik naar het Hout- en Meubileringscollege in Rotterdam wilde.
+                Op mijn 17e was het dan zover: ik ging beginnen aan mijn studie aan deze school. In 2022 ben
+                ik afgestudeerd en mag ik mezelf daarbij gediplomeerd interieuradviseur noemen.
+            </p>
+            <h3>Ambitie</h3>
+            <p>
+                Met Auniek Interieurs wil ik mijn klanten laten ervaren hoe verrassend kleuren en exclusieve materialen
+                een verhaal kunnen vertellen.
             </p>
         </div>
     </section>

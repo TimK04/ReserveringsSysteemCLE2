@@ -57,6 +57,7 @@ if (isset($_POST['submit'])) {
 
         if ($result) {
             $succes = "Bedankt voor het inplannen! We nemen zo snel mogelijk contact met je op.";
+            mail('$email', "Intake ingepland Auniek Interieur", 'Je reservering is geslaagd!');
         }
     }
 }

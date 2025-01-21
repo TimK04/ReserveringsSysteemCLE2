@@ -117,12 +117,13 @@ button:hover {
 main {
     display: flex;
     min-height: 50vh;
+    justify-content: center;
 }
 
 .profileText {
-    max-width: 50%;
+    /*max-width: 50%;*/
     display: flex;
-    margin-left: 10%;
+    margin: 0 10%;
     flex-direction: column;
     text-align: left;
     color: var(--textColorBrown);

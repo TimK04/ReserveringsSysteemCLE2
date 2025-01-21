@@ -8,10 +8,11 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
+    height: 20vh;
 }
 
 header div {
-    height: 35vh;
+    /*height: 20vh;*/
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,11 +20,25 @@ header div {
     text-align: center;
 }
 
+main {
+    min-height: 55vh;
+    padding: 3vh 15vw;
+}
+
 section {
     display: flex;
     justify-content: center;
-    align-items: center;
+    /*align-items: center;*/
     text-align: center;
+}
+
+.foto {
+    flex: 1;
+}
+
+.info {
+    text-align: left;
+    flex: 2;
 }
 
 main div {
@@ -38,8 +53,16 @@ main div {
     box-shadow: 2px 2px 5px 5px #DADFE2;
 }
 
-.about_par {
-    width: 30vw;
-    padding: 5px;
-    margin: 5px;
+h2 {
+    color: var(--textColorBlue);
+    margin-bottom: 1vh;
+}
+
+h3 {
+    color: var(--textColorBrown);
+    margin-top: 2vh;
+}
+
+p {
+    color: var(--textColorBrown);
 }
