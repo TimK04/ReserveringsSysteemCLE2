@@ -145,6 +145,7 @@ h2 {
     margin-left: 5%;
     background-color: var(--textColorBrown);
     border-radius: 7px;
+
 }
 
 td {
@@ -173,6 +174,7 @@ th {
 
 table {
     min-width: 50%;
+
 }
 
 .warning {
@@ -182,5 +184,6 @@ table {
 .table h2 {
     background-color: var(--textColorBlue);
     color: var(--colorButton);
-    border-radius: 7px;
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
 }

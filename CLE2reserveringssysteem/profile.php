@@ -85,7 +85,7 @@ mysqli_close($db);
                     </tr>
                 <?php endforeach; ?>
                 <?php } else { ?>
-                    <h2 class="warning"> geen reserveringen</h2>
+                    <h2 class="warning"> Geen reserveringen</h2>
                 <?php } ?>
                 </tbody>
             </div>
