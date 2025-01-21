@@ -27,7 +27,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 26vh;
+    height: 20vh;
 }
 
 .button {
@@ -108,4 +108,73 @@ button:hover {
     margin: 1vh;
     height: 7.5vh;
 
+}
+
+.headTable {
+    max-width: 50%;
+}
+
+main {
+    display: flex;
+    min-height: 50vh;
+}
+
+.profileText {
+    max-width: 50%;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    text-align: center;
+    color: var(--textColorBrown);
+
+}
+
+
+p {
+    color: var(--textColorBrown);
+}
+
+h2 {
+    color: var(--textColorBlue);
+}
+
+.table {
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+
+}
+
+td {
+
+    text-align: left;
+    border-bottom: 1px solid var(--colorButton);
+    border-right: 1px solid var(--colorButton);
+    color: var(--colorButton);
+}
+
+th {
+    text-align: left;
+    border-bottom: 2px solid var(--colorButton);
+    border-right: 2px solid var(--colorButton);
+    color: var(--colorButton);
+}
+
+.tableContainer {
+    flex-direction: row;
+
+}
+
+.tableDate {
+    min-width: 7.5vw;
+}
+
+table {
+    background-color: var(--textColorBrown);
+    border-radius: 7px;
+    min-width: 50%;
+}
+
+.warning {
+    min-width: 50vw;
 }

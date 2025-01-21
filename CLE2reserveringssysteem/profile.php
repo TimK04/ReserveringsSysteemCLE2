@@ -1,5 +1,6 @@
 <?php
 /** @var mysqli $db */
+/** @var mysqli $reservations */
 session_start();
 require_once 'include/database.php';
 
@@ -28,6 +29,8 @@ ON reservations.user_id = users.id
 WHERE users.id = $id
 ";
 
+$reservations = [];
+
 $result = mysqli_query($db, $sql)
 or die('Error: ' . mysqli_error($db) . 'with query ' . $sql);
 
@@ -47,7 +50,8 @@ mysqli_close($db);
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/intake.css">
+
+    <link rel="stylesheet" href="css/user.css">
     <title>Auniek Interieur - Profiel</title>
 </head>
 <body>
@@ -57,27 +61,37 @@ mysqli_close($db);
 <header>
     <h1> Welkom <?= $firstName ?></h1>
 </header>
-<main class="intake">
-    <div>
-        <thead>
-        <h2>Reservering</h2>
-        <th>Datum</th>
-        <th>Tijd</th>
-        <th>Wat verwacht u van ons</th>
-        </thead>
-        <tbody>
-        <?php foreach ($reservations as $index => $reservation): ?>
-            <tr>
-                <td><?= $index + 1 ?></td>
-                <td> <?= $reservation['date'] ?></td>
-                <td><?= $reservation['time'] ?></td>
-                <td><?= $reservation['text'] ?></td>
-            </tr>
-        <?php endforeach; ?>
-        </tbody>
-    </div>
-    <div>
+<main>
+    <div class="table">
+        <table>
+            <?php if (!empty($reservations)) { ?>
+            <h2>Reservering</h2>
+            <div class="tableContainer">
+                <thead>
+                <th></th>
+                <th>Datum</th>
+                <th>Tijd</th>
+                <th>Wat verwacht u van ons</th>
+                </thead>
 
+                <tbody>
+
+                <?php foreach ($reservations ?? ' ' as $index => $reservation) : ?>
+                    <tr>
+                        <td><?= $index + 1 ?? ' ' ?></td>
+                        <td class="tableDate"> <?= $reservation['date'] ?? ' ' ?></td>
+                        <td><?= $reservation['time'] ?? ' ' ?></td>
+                        <td><?= $reservation['text'] ?? ' ' ?></td>
+                    </tr>
+                <?php endforeach; ?>
+                <?php } else { ?>
+                    <h2 class="warning"> geen reserveringen</h2>
+                <?php } ?>
+                </tbody>
+            </div>
+        </table>
+    </div>
+    <div class="profileText">
         <h2>Uw gegevens</h2>
         <div>
             <h3>Voornaam:</h3>
