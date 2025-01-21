@@ -2,6 +2,12 @@
 /** @var mysqli $db */
 /** @var mysqli $reservations */
 session_start();
+
+if (!isset($_SESSION['Login'])) {
+    header('location: index.php');
+    exit;
+}
+
 require_once 'include/database.php';
 
 
