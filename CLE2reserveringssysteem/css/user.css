@@ -124,7 +124,7 @@ main {
     display: flex;
     margin-left: 10%;
     flex-direction: column;
-    text-align: center;
+    text-align: left;
     color: var(--textColorBrown);
 
 }
