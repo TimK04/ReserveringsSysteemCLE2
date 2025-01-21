@@ -16,6 +16,7 @@ if (isset($_POST['submit'])) {
     $email = mysqli_escape_string($db, $_POST['email']);
     $needs = mysqli_escape_string($db, $_POST['needs']);
     $date = date('Y-m-d', strtotime($_POST['selectedDate']));
+    $today = date('Y-m-d');
     if (isset($_POST['time'])) {
         $time = $_POST['time'];
     }
@@ -39,10 +40,12 @@ if (isset($_POST['submit'])) {
     if ($_POST['selectedDate'] === '') {
         $errors['selectedDate'] = 'Je moet een datum selecteren';
     }
+    if ($_POST['selectedDate'] < $today) {
+        $errors['selectedDate'] = 'Je kunt geen datum in het verleden selecteren';
+    }
     if (!isset($_POST['time'])) {
         $errors['time'] = 'Je moet een tijd selecteren';
     }
-
 
     if (empty($errors)) {
         if ($_POST['id'] != '') {
