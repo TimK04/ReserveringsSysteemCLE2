@@ -16,6 +16,9 @@ if (isset($_POST['submit'])) {
     $email = mysqli_escape_string($db, $_POST['email']);
     $needs = mysqli_escape_string($db, $_POST['needs']);
     $date = date('Y-m-d', strtotime($_POST['selectedDate']));
+    if (isset($_POST['time'])) {
+        $time = $_POST['time'];
+    }
     $id = $_POST['id'];
 
     if ($firstName === '') {
@@ -36,14 +39,18 @@ if (isset($_POST['submit'])) {
     if ($_POST['selectedDate'] === '') {
         $errors['selectedDate'] = 'Je moet een datum selecteren';
     }
+    if (!isset($_POST['time'])) {
+        $errors['time'] = 'Je moet een tijd selecteren';
+    }
+
 
     if (empty($errors)) {
         if ($_POST['id'] != '') {
-            $query = "INSERT INTO reservations(first_name, last_name, email, text, date, user_id) 
-            VALUES ('$firstName','$lastName','$email','$needs', '$date', $id)";
+            $query = "INSERT INTO reservations(first_name, last_name, email, text, date, time, user_id) 
+            VALUES ('$firstName','$lastName','$email','$needs', '$date', '$time', $id)";
         } else {
-            $query = "INSERT INTO reservations(first_name, last_name, email, text, date) 
-            VALUES ('$firstName','$lastName','$email','$needs', '$date')";
+            $query = "INSERT INTO reservations(first_name, last_name, email, text, date, time) 
+            VALUES ('$firstName','$lastName','$email','$needs', '$date', '$time')";
         }
 
         $result = mysqli_query($db, $query);
@@ -102,8 +109,43 @@ if (isset($_POST['submit'])) {
                 <input type="hidden" id="selectedDate" name="selectedDate">
                 <p class="error"> <?= $errors['selectedDate'] ?? '' ?> </p>
             </div>
-            <div>
+            <div class="times">
                 <!--Tijd Selecteren-->
+                <p id="dateSelectionMessage">Selecteer eerst een datum uit de kalender.</p>
+                <p class="error"> <?= $errors['time'] ?? '' ?> </p>
+                <div id="timeSelectionContainer" style="display: none;">
+                    <p>Selecteer een beschikbare tijd:</p>
+                    <div id="availableTimesGrid" class="time-grid">
+                        <div>
+                            <label class="container">09:00
+                                <input id="09:00" type="radio" name="time" value="09:00">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="container">09:15
+                                <input id="09:15" type="radio" name="time" value="09:15">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="container">09:30
+                                <input id="09:30" type="radio" name="time" value="09:30">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div>
+                            <label class="container">09:45
+                                <input id="09:45" type="radio" name="time" value="09:45">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="container">10:00
+                                <input id="10:00" type="radio" name="time" value="10:00">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="container">10:15
+                                <input id="10:15" type="radio" name="time" value="10:15">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="column">

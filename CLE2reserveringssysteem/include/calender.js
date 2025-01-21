@@ -39,19 +39,43 @@ function renderCalendar(date) {
     }
 }
 
+// function selectDate(cell) {
+//     // Verwijder eerdere selectie
+//     const selectedCells = document.querySelectorAll('.selected');
+//     selectedCells.forEach(cell => cell.classList.remove('selected'));
+//
+//     // Voeg klasse toe aan geselecteerde cel
+//     cell.classList.add('selected');
+//
+//     // Update verborgen invoerveld met de geselecteerde datum
+//     const selectedDateInput = document.getElementById('selectedDate');
+//     const selectedDay = cell.textContent;
+//     const [month, year] = monthAndYear.textContent.split(' ');
+//     selectedDateInput.value = `${selectedDay} ${month} ${year}`;
+// }
+
 function selectDate(cell) {
-    // Verwijder eerdere selectie
+    // Markeer de geselecteerde cel
     const selectedCells = document.querySelectorAll('.selected');
     selectedCells.forEach(cell => cell.classList.remove('selected'));
-
-    // Voeg klasse toe aan geselecteerde cel
     cell.classList.add('selected');
 
-    // Update verborgen invoerveld met de geselecteerde datum
+    // Haal de geselecteerde datum op
     const selectedDateInput = document.getElementById('selectedDate');
-    const selectedDay = cell.textContent;
+    const selectedDay = cell.textContent.padStart(2, '0');
     const [month, year] = monthAndYear.textContent.split(' ');
-    selectedDateInput.value = `${selectedDay} ${month} ${year}`;
+
+    const monthNumber = new Date(`${month} 1, ${year}`).getMonth() + 1;
+    const formattedMonth = String(monthNumber).padStart(2, '0');
+    const formattedDate = `${year}-${formattedMonth}-${selectedDay}`;
+
+    selectedDateInput.value = formattedDate;
+
+    // Toon het tijdselectiegedeelte en werk de beschikbare tijden bij
+    const timeSelectionContainer = document.getElementById('timeSelectionContainer');
+    const dateSelectionMessage = document.getElementById('dateSelectionMessage');
+    timeSelectionContainer.style.display = 'block'; // Maak zichtbaar
+    dateSelectionMessage.style.display = 'none'; // Maar onzichtbaar
 }
 
 // Event Listeners voor navigatie
